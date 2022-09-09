@@ -8,3 +8,4 @@ digits:
   length_password_min_6: 6
   length_phone_number: 10
   length_cmt_max: 255
+  movie_per_page: 6
