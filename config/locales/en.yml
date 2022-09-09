@@ -1,4 +1,6 @@
 en:
+  film_not_found: Film not found
+  not_del: Not deleted!
   text:
     intern_ruby: InternRuby2022BookingTicket
   layouts:
@@ -30,3 +32,15 @@ en:
       galaxy_cinema: Galaxy Cinema
       download_app: Download APP
       company_name: Thien Ngan Movie Company, Floor 5, Song Hong Sun Building, 23 Phan Chu Trinh, Phan Chu Trinh District, Hoan Kiem, Ha Noi
+  bookings:
+    show:
+      booking: Booking
+      rating: Rating
+      min: minutes
+      director: Director
+      cast: Cast
+      age_range: Age range
+      language: Language
+      category: Category
+      release_time: Release time
+      main_content: Main content
