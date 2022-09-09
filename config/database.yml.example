@@ -1,0 +1,16 @@
+default: 
+  adapter: 
+  pool:
+  timeout: 
+
+development:
+  <<:
+  database: 
+
+test:
+  <<: 
+  database:
+
+production:
+  <<: 
+  database:
