@@ -1,0 +1,53 @@
+<div class="galaxy-header">
+   <div class="container">
+      <div class="row">
+         <div class="header-nav-wrapper">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="logo">
+                  <%= link_to image_tag("galaxy-logo.png", class: "lazy hidden-xs hidden-sm loaded"),"#" %>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8">
+               <div class="primary-nav-wrapper desktop hidden-xs hidden-sm">
+                  <div class="search">
+                        <form class="search-form">
+                           <div class="input-append">
+                              <input placeholder="Tìm tên phim, diễn viên..." class="search-box" type="text" autocomplete="off">
+                              <button type="submit" class="search-btn"><i class="fa fa-thin fa-magnifying-glass"></i></button>
+                           </div>
+                        </form>
+                  </div>
+                  <div class="secondary-nav-wrapper">
+                     <ul class="secondary-nav">
+                        <li>
+                           <%= link_to("#", id: "loginLink" ) do %>
+                              <i class="fa-solid fa-user"></i><%= t(".login") %>
+                           <% end %>
+                        </li>
+                        <li class="language hidden-xs">
+                        <%= link_to "EN", locale:"en" %>
+                        <span>|</span>
+                        <%= link_to "VN", class: "active", locale:"vi" %>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="galaxy-nav">
+   <div class="container">
+      <nav>
+         <ul class="primary-nav">
+            <li><%= link_to t(".buy_ticket"), "#" %></li>
+            <li><%= link_to t(".movie"), "#", id: "dropdownMenuLink" %></li>
+            <li><%= link_to t(".event"), "#" %></li>
+            <li><%= link_to t(".cine_price"), "#" %></li>
+            <li><%= link_to t(".support"), "#" %></li>
+         </ul>
+      </nav>
+   </div>
+</div>

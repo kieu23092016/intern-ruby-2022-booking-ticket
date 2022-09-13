@@ -1,0 +1,252 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.galaxy-header {
+  background-color: #f7f9fa;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 970px;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.header-nav-wrapper {
+  position: relative;
+  .logo{
+    min-height: 80px;
+    position: relative;
+    a{
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+  .primary-nav-wrapper {
+    float: right;
+    width: 100%;
+    .desktop {
+      min-height: 80px;
+      position: relative;
+      z-index: 1;
+      .search {
+        padding: 0px 0px 0px 75px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+      .secondary-nav-wrapper {
+        margin: auto;
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+}
+
+a img {
+  border: none;
+}
+
+.search {
+  display: inline-block;
+  padding: 23px 0 23px 75px;
+  .input-append {
+    position: relative;
+  }
+  .search-form {
+    .search-box {
+      border: 1px solid #ced0da;
+      font-size: 14px;
+      padding: 6px 25px 6px 10px;
+      transition: width 0.3s;
+      -webkit-transition: width 0.3s;
+      color: #43464b;
+      width: 250px;
+    }
+    .search-btn {
+      border: 0;
+      background: none;
+      padding: 2px 5px;
+      position: relative;
+      left: -32px;
+      color: #a0a3a7;
+    }
+  }
+}
+input, textarea {
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+input {
+  line-height: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.secondary-nav-wrapper {
+  margin: 33px 0 20px 15px;
+  float: right;
+  ul {
+    display: inline-block;
+    li {
+      display: inline-block;
+    }
+  }
+  ul.secondary-nav {
+    li {
+      letter-spacing: 1px;
+      position: relative;
+      margin: 0 16px 0 0;
+      a {
+        position: relative;
+        text-decoration: none;
+        font-size: 12px;
+      }
+      li:last-child {
+        padding-right: 0;
+      }
+      a.active {
+        color: #f26b38;
+      }
+    }
+    .language span {
+     color: #a0a3a7;
+     padding: 0 5px;
+    }
+  }
+}
+
+.galaxy-nav {
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  background-color: #000000;
+  nav {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    ul{
+      li:first-child {
+        margin-left: 0;
+        a {
+          padding-left: 0;
+        }
+      }
+      li {
+        float: left;
+        position: relative;
+        padding: 0;
+        line-height: 40px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        -webkit-transition: all 0.2s;
+        a {
+          font-weight: 500;
+          position: relative;
+          text-decoration: none;
+          color: #ffffff;
+          -webkit-transition: all 0.5s;
+        }
+      }
+      li.sub-nav div#sub-menu ul li a {
+        color: #ffffff;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-right: none;
+        padding: 0;
+        display: block;
+        margin: 0;
+      }
+    }
+  }
+  .primary-nav {
+    display: table-row;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      display: table-cell;
+      text-align: center;
+      width: calc(100% / 5);
+      line-height: 50px;
+      a {
+        display: block;
+      }
+    }
+    li:not(:last-child) {
+      background: url(images/line-menu.png) no-repeat center right;
+    }
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.footer-bg {
+  background-color: #1a1a1a;
+  padding: 40px 15px 20px 15px;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.title-widget {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  line-height: 1;
+  position: relative;
+  text-transform: uppercase;
+  margin: 0 0 25px 0;
+  padding-left: 16px;
+}
+.widget_nav_menu ul {
+  list-style: outside none none;
+  padding-left: 0;
+  li {
+    font-size: 13px;
+    line-height: 20px;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+    color: #d8d8d8;
+  }
+}
+.footer-line {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.footer-bottom {
+  min-height: 30px;
+  width: 100%;
+  background-color: #1a1a1a;
+}
+.ano-trade .wrap-icon {
+    padding-left: 0px;
+    text-align: right;
+    min-width: 601px;
+    max-width: 1500px
+}

@@ -1,33 +1,32 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  text:
+    intern_ruby: InternRuby2022BookingTicket
+  layouts:
+    header:
+      find_box: Finding movie, actor,...
+      login: Login
+      buy_ticket: Buying ticket
+      movie: Movie
+      onboard_movie: Onboard movie
+      upcomming_movie: Upcoming movie
+      event: Event
+      cine_price: Cinema/ Price
+      support: Support
+    footer:
+      about_us: About us
+      terms_of_use: Terms of use
+      operating_regulation: Operating Regulation
+      privacy_policy: Privacy policy
+      cinema_blog: Cinema blog
+      movie_genre: Movie genre
+      movie_review: Movie review
+      movie_blog: Movie blog
+      hot_movie: Hot movie
+      support: Support
+      feedback: Feedback
+      sale_services: Sale and Services
+      cinema/ticket: Cinema/ Ticket
+      career: Career
+      galaxy_cinema: Galaxy Cinema
+      download_app: Download APP
+      company_name: Thien Ngan Movie Company, Floor 5, Song Hong Sun Building, 23 Phan Chu Trinh, Phan Chu Trinh District, Hoan Kiem, Ha Noi
