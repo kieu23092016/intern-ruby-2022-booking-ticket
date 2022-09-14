@@ -19,5 +19,5 @@ class User < ApplicationRecord
           format: {with: Settings.regex.phone},
           uniqueness: true
 
-  # has_secure_password
+  has_secure_password
 end
