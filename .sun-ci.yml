@@ -10,7 +10,7 @@ jobs:
   image: manhbnt/ruby:2.7.1
   script:
   - cp database-ci.yml config/database.yml
-  - bundle _2.1.4_ install --path vendor/bundle 
+  - bundle _2.1.4_ install --path vendor/bundle
   cache:
   - key: vendor_$CI_BRANCH
     paths:
@@ -29,7 +29,7 @@ jobs:
 #       MYSQL_ROOT_PASSWORD: password_test
 #   before_script:
 #   - bundle _2.1.4_ install --path vendor/bundle
-#   - bundle _2.1.4_ exec rake db:drop db:create db:migrate 
+#   - bundle _2.1.4_ exec rake db:drop db:create db:migrate
 #   - mkdir .sun-ci
 #   script:
 #   - DISABLE_SPRING=1 bundle _2.1.4_ exec rspec --format html --out .sun-ci/rspec.html spec/

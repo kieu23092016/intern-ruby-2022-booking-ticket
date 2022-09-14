@@ -1,0 +1,32 @@
+vi:
+  text:
+    intern_ruby: InternRuby2022BookingTicket
+  layouts:
+    header:
+      find_box: Tìm tên phim, diễn viên,...
+      login: Đăng nhập
+      buy_ticket: Mua vé
+      movie: Phim
+      onboard_movie: Phim đang chiếu
+      upcomming_movie: Phim sắp chiếu
+      event: Sự kiện
+      cine_price: Rạp/ Giá vé
+      support: Hỗ trợ
+    footer:
+      about_us: Về chúng tôi
+      terms_of_use: Thỏa thuận sử dụng
+      operating_regulation: Quy chế hoạt động
+      privacy_policy: Chính sách bảo mật
+      cinema_blog: Góc điện ảnh
+      movie_genre: Thể loại phim
+      movie_review: Bình luận phim
+      movie_blog: Blog điện ảnh
+      hot_movie: Phim hay tháng
+      support: Hỗ trợ
+      feedback: Góp ý
+      sale_services: Sale và Services
+      cinema/ticket: Rạp/ Giá vé
+      career: Tuyển dụng
+      galaxy_cinema: Kết nối Galaxy Cinema
+      download_app: Download
+      company_name: Công Ty Cổ Phần Phim Thiên Ngân, Tầng 5, Toà Nhà Mặt Trời Sông Hồng, 23 Phan Chu Trinh, Phường Phan Chu Trinh, Quận Hoàn Kiếm, Hà Nội
