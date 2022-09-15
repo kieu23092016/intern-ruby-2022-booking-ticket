@@ -27,9 +27,11 @@ cinemas = Cinema.all
   cinemas.each { |cinema| cinema.rooms.create!(row: 20, length: 30) }
 end
 
+
+
 50.times do
-  title = "Spider-Man: No Way Home"
-  description = "Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man, co-produced by Columbia Pictures and Marvel "
+  title = "Before Sunrise"
+  description = "While travelling on a train in Europe, Jesse, an American man, meets Celine, a French woman. On his last day in Europe before returning to the US, he decides to spend his remaining hours with her."
   rating = 4.2
   duration_min = 120
   release_time = "9/9/2022"
@@ -39,20 +41,26 @@ end
   age_range = "Under 18"
   category_id = 2
   img_link = "https://cdn.galaxycine.vn/media/2022/8/29/1200-x-1800_1661753251433.jpg"
+  director = "Faker"
+  cast = "Ethen Hawkey, July Delphy"
+  age_range = "Under 18"
+  category_id = 2
+  img_link = "https://cdn-amz.woka.io/images/I/91BLbWDAAkL.jpg"
   Movie.create!(title: title, description: description, rating: rating,
                  duration_min: duration_min, release_time: release_time,
                  language: language, director: director, cast: cast,
                  age_range: age_range, category_id: category_id, img_link: img_link)
-  end
-
+end
+time = Time.now
 movies = Movie.all
 rooms = Room.all
 movies.each{ |movie|
-  rooms.each{ |room|
-    start_time = "1/9/2022"
-    end_time = "10/9/2022"
+  rooms.sample(10).each{ |room|
+    start_time = time
+    end_time = start_time + 2*60*60
     ShowTime.create!(
       start_time: start_time, end_time: end_time, movie_id: movie.id, room_id: room.id
     )
+    time = end_time
   }
 }

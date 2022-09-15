@@ -1,0 +1,20 @@
+<% cinemas.each do |cinema, rooms| %>
+  <div class="cinema-block">
+    <div class = "title-cinema">
+      <h5><%= cinema.name %></h5>
+    </div>
+    <div class="item-cinema">
+      <label><%= t("text.sub") %></label>
+      <div class="showtime-block">
+        <% rooms.each do |room, show_times| %>
+          <% show_times.each do |show_time| %>
+            <% if show_time.movie_id == movie_id %>
+                <%= render partial: "showtimes/show_time", locals: {show_time: show_time} %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <br>
+<% end %>

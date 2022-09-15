@@ -6,7 +6,7 @@ ruby "2.7.1"
 gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.4.1"
-gem "config", git: "https://github.com/rubyconfig/config"
+gem "config"
 gem "faker", "2.1.2"
 gem "figaro"
 gem "font-awesome-sass", "~> 6.2.0"
@@ -28,6 +28,7 @@ group :development do
   gem "listen", "~> 3.3"
   gem "rack-mini-profiler", "~> 2.0"
   gem "spring"
+  gem "pry-rails"
   gem "web-console", ">= 4.1.0"
 end
 
