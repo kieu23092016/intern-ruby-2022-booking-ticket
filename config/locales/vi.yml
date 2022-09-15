@@ -8,6 +8,7 @@ vi:
     forget_password: Quên mật khẩu?
     login: Đăng nhập
     register: Đăng ký
+    sub: 2D - Phụ đề
   layouts:
     header:
       account: Tài khoản
@@ -51,3 +52,6 @@ vi:
       category: Thể loại
       release_time: Thời gian phát hành
       main_content: Nội dung chính
+  time:
+    formats:
+      default: "%d/%m/%Y"

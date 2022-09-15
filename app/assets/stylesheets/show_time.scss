@@ -1,0 +1,47 @@
+.detail-group-cinema {
+  .title-cinema {
+    position: relative;
+    box-sizing: border-box;
+    height: 40px;
+    width: 270px;
+    padding: 7px 20px;
+    background-color: #f26b38;
+    color: #ffffff;
+  }
+  .item-cinema {
+    padding: 35px 20px 25px 20px;
+    border: 1px solid #a0a3a7;
+    clear: both;
+    listtime:last-child {
+      margin-bottom: 0;
+    }
+    .listtime {
+      label {
+        font-size: 16px;
+        padding-top: 5px;
+        display: inline-block;
+        width: 25%;
+        vertical-align: top;
+      }
+      .typetime {
+        display: inline-block;
+        width: 75%;
+        a {
+          margin: 0 10px 10px 0;
+          padding: 5px 10px;
+          border: 1px solid #ced0da;
+          color: #43464b;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.showtime-block {
+  display: flex;
+}
+
+.cinema-block {
+  width: 100%;
+}

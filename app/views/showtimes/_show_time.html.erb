@@ -1,0 +1,9 @@
+<div class="detail-group-cinema" id="showtime-<%= show_time.id %>">
+  <div>
+    <div class="listtime">
+      <div class="typetime">
+        <%= link_to show_time.start_time.to_s(:time), "#", class: "showtimes-list" %>
+      </div>
+    </div>
+  </div>
+</div>
