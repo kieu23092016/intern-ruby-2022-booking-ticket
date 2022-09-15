@@ -1,4 +1,6 @@
 vi:
+  film_not_found: Không tìm thấy phim
+  not_del: Không được xóa!
   text:
     intern_ruby: InternRuby2022BookingTicket
   layouts:
@@ -30,3 +32,15 @@ vi:
       galaxy_cinema: Kết nối Galaxy Cinema
       download_app: Download
       company_name: Công Ty Cổ Phần Phim Thiên Ngân, Tầng 5, Toà Nhà Mặt Trời Sông Hồng, 23 Phan Chu Trinh, Phường Phan Chu Trinh, Quận Hoàn Kiếm, Hà Nội
+  bookings:
+    show:
+      booking: Đặt vé xem phim
+      rating: Đánh giá
+      min: phút
+      director: Đạo diễn
+      cast: Diễn viên
+      age_range: Giới hạn độ tuổi
+      language: Ngôn ngữ
+      category: Thể loại
+      release_time: Thời gian phát hành
+      main_content: Nội dung chính
