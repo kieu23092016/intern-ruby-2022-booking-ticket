@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_16_095414) do
+ActiveRecord::Schema.define(version: 2022_09_21_024054) do
 
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -72,6 +72,14 @@ ActiveRecord::Schema.define(version: 2022_09_16_095414) do
     t.index ["cinema_id"], name: "index_rooms_on_cinema_id"
   end
 
+  create_table "seats", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "seat_number"
+    t.integer "status"
+    t.integer "seat_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "show_times", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
@@ -85,7 +93,7 @@ ActiveRecord::Schema.define(version: 2022_09_16_095414) do
 
   create_table "tickets", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "price"
-    t.integer "type"
+    t.integer "ticket_type"
     t.string "seat_number"
     t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
@@ -104,8 +112,8 @@ ActiveRecord::Schema.define(version: 2022_09_16_095414) do
     t.boolean "sex"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "admin"
     t.string "password_digest"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["phone"], name: "index_users_on_phone", unique: true
   end

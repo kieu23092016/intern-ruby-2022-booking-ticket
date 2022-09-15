@@ -1,0 +1,311 @@
+@import 'color';
+
+.ticket-wrapper {
+  width: 100%;
+
+  .booking-bg {
+    background-color: $orange;
+    margin-bottom: 10px;
+  }
+
+  .booking-ticket {
+    clear: both;
+    min-height: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    display: inline-block;
+
+    .booking-title {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: $white;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+}
+
+.booking-ticket-table {
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: $white;
+
+  .input-group{
+
+    .input-booking {
+      width: 22%;
+      margin: 0 auto;
+    }
+
+    .btn-addminus {
+      border: none;
+      background: transparent;
+      font-size: 18px;
+    }
+
+    .input-number {
+      text-align: center;
+
+      input{
+        width: 60px;
+      }
+    }
+  }
+}
+
+.booking-ticket-table > thead {
+  background-color: $orange-b;
+  color: $white;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+  background-color: $white-b;
+}
+
+.booking-ticket-table > tbody > tr > td:first-child {
+  text-align: left;
+}
+
+.booking-ticket-table > tbody > tr > td {
+  border-top: none;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+
+.input-group-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+  width: 0%;
+}
+
+.ticket-header {
+  width: 100%;
+  background-color: $white-c;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.ticket-header-feature{
+  top: 34px;
+  transition: top 0.3s ease-in-out 0s;
+  z-index: 2;
+}
+
+.ticket-feature {
+  clear: both;
+  min-height: 0;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  display: inline-block;
+  article {
+    clear: both;
+    box-sizing: border-box;
+  }
+}
+
+.ticket-detail{
+  .ticket-title {
+    font-size: 14px;
+    line-height: 20px;
+    color: $gray-b;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .ticket-title.vn {
+    color: $gray-a;
+  }
+
+  .ticket-icon {
+    margin: 10px 0;
+  }
+
+  .ticket-icon i {
+    vertical-align: middle;
+  }
+
+  .ticket-info {
+    font-size: 13px;
+    color: $gray-b;
+
+    .dotted-line {
+      border-bottom: 1px dotted $gray-c;
+      padding: 10px 0;
+    }
+  }
+
+  .ticket-price-total {
+    p{
+      padding: 10px 0;
+    }
+
+    span {
+      color: $orange;
+      font-size: 20px;
+    }
+  }
+}
+
+.ticket-button {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.upper-text {
+  text-transform: uppercase!important;
+}
+
+span.notice {
+  color: $red-n;
+  padding-left: 5px;
+  font-size: 11px;
+}
+
+.ticket-button .btn.right {
+  margin: 0;
+}
+
+.ticket-feature article img {
+  width: 80%;
+  height: auto;
+}
+
+.btn.primary-arrow:hover {
+  background-color: $orange-c;
+}
+
+.btn.primary-arrow {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $orange;
+  padding: 10px;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.seat-map-wrapper {
+  display: inline-block;
+  width: 100%;
+  background-color: $white;
+  padding: 30px 10px;
+
+  .seat-map {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .screen {
+    border-bottom: 3px solid $gray-d;
+    width: 35%;
+    text-align: center;
+    font-size: 14px;
+    padding-bottom: 6px;
+    margin: 30px auto;
+  }
+
+  .seat-cinema {
+    text-align: center;
+
+    span {
+      margin: 1px 20px 0 0;
+      font-size: 14px;
+    }
+
+    span.seat-cinema-selected:before {
+      background-color: $cinema-select;
+    }
+
+    span:before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+    }
+
+    span.seat-cinema-unavailable:before {
+      background-color: $cinema-unavailable;
+    }
+
+    span.seat-cinema-normal:before {
+      background-color: $white-e;
+    }
+  }
+
+  .seat-row {
+    li {
+      vertical-align: middle;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      text-align: center;
+      line-height: 22px;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    li.index {
+      background-color: transparent;
+      border: solid 1px $orange-d;
+    }
+
+    .seat-col-wrapper{
+      width: 378px;
+    }
+  }
+
+  .seat-col {
+    text-align: left;
+    padding-left: 0px;
+    display: flex;
+    justify-content: space-evenly;
+
+    li {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background: $white-d;
+      cursor: pointer;
+      position: relative;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 2px;
+    }
+
+    li.available{
+      background-color: $white-d;
+    }
+    
+    li.cinema-selected{
+      background-color: $cinema-unavailable;
+    }
+  }
+}
+
+.image-div{
+  text-align: center;
+}
