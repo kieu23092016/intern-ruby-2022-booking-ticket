@@ -17,6 +17,7 @@ gem "webpacker", "~> 5.0"
 gem "faker", "2.1.2"
 gem "config"
 gem "figaro"
+gem "pagy"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

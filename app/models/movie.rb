@@ -4,4 +4,5 @@ class Movie < ApplicationRecord
   belongs_to :category
 
   delegate :name, to: :category
+  scope :sort_list, ->{order :release_time}
 end

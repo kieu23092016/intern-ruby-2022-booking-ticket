@@ -1,0 +1,126 @@
+@import "color";
+
+.tab-movies {
+  margin: 15px 0;
+}
+
+.tab-movies-line .nav-tabs.movie-home {
+  width: 50%;
+}
+
+.tab-movies-line .nav-tabs {
+  border-bottom: 1px solid $DDD;
+}
+
+.tab-movies-line .nav-tabs li {
+  margin-right: 30px;
+}
+
+.tab-movies-line .nav-tabs li.active > a {
+  border-width: 0;
+  border: none;
+  color: $gray-b !important;
+  background: transparent;
+}
+
+.tab-movies-line .nav-tabs li > a {
+  border: none;
+  color: $gray-a;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 10px 0;
+}
+
+.tab-movies-line .tab-content {
+  background-color: $white;
+  border: 0;
+  padding: 15px 0;
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+.movies-group {
+  margin: 20px -15px 10px -15px;
+}
+
+.movies-group .movie-item {
+  margin-bottom: 20px;
+}
+
+.movies-group .article-movie-home {
+  position: relative;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  display: table;
+}
+
+.movies-group .article-movie-home img {
+  width: 100%;
+  height: auto;
+  display: table-cell;
+}
+
+.movies-group .article-movie-home .overlay {
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  opacity: 0;
+  background-color: $black-a;
+}
+.movies-group .article-movie-home .decription-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.movies-group .article-movie-home .movies-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.article-movie-home:hover{
+  opacity: 0.4;
+}
+
+.btn.secondary-white {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color:$white;
+  font-weight: 400;
+  border: 1px solid $white;
+  padding: 15px 30px;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.movies-group .title-movie {
+  margin-top: 8px;
+}
+.title-movie {
+  position: relative;
+}
+
+.movies-group .title-movie h4 {
+  font-size: 16px;
+  color: $gray-b;
+  text-transform: capitalize;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
