@@ -1,0 +1,47 @@
+<div id="login-modal" class="modal fade in" style="display: block; padding-right: 15px;">
+  <div class="modal-dialog ng-scope">
+    <div class="modal-outer-container">
+      <div class="modal-middle-container">
+        <div class="login-wrapper animated slideInDown">
+          <div class="login-container">
+            <span class="close"><i class="fa-duotone fa-xmark"></i></span>
+            <div class="tab-login-line">
+              <ul class="nav nav-tabs">
+                <li class="active">
+                  <%= link_to t("text.login"), "#", id: "a_tab_login_1", data: {toggle: "tab"} %>
+                </li>
+              </ul>
+              <div class="row">
+                  <div class="col-md-12">
+                    <div class="tab-content">
+                      <div id="tab_login_1" class="tab-pane active">
+                        <div class="login-tab-wrapper">
+                            <div class="login-heading">
+                              <div class="text-heading">
+                                <span class="sub-text ng-scope"><%= t "text.sign_in_message" %></span>
+                              </div>
+                            </div>
+                            <div class="login-form">
+                              <%= form_for(:session, url: login_path) do |f| %>
+                                <%= f.label :email %>
+                                <%= f.email_field :email, class: "login" %>
+                                <%= f.label :password %>
+                                <%= f.password_field :password, class: "login" %>
+                                <%= f.submit "Log in", class: "btn primary input" %>
+                                <div class="login-remember">
+                                  <div class="forget-pass"><a id="forgetPass"><%= t "text.forget_password" %></a></div>
+                                </div>
+                              <% end %>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

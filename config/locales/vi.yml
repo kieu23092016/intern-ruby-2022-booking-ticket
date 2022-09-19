@@ -3,8 +3,15 @@ vi:
   not_del: Không được xóa!
   text:
     intern_ruby: InternRuby2022BookingTicket
+    user_not_found: Không tìm thấy người dùng
+    sign_in_message: Vui lòng đăng nhập trước khi mua vé để tích luỹ điểm, cơ hội nhận thêm nhiều ưu đãi từ chương trình thành viên Galaxy Cinema.
+    forget_password: Quên mật khẩu?
+    login: Đăng nhập
+    register: Đăng ký
   layouts:
     header:
+      account: Tài khoản
+      exit: Thoát
       find_box: Tìm tên phim, diễn viên,...
       login: Đăng nhập
       buy_ticket: Mua vé
