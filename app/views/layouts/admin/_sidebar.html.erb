@@ -1,0 +1,32 @@
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <h3><%= t ".management" %></h3>
+  </div>
+
+  <ul class="list-unstyled components">
+    <li class="active">
+      <%= link_to t(".movies"), "#homeSubmenu", data:{toggle: "collapse"}, aria:{expanded: false} %>
+      <ul class="collapse list-unstyled" id="homeSubmenu">
+        <li><%= link_to t(".add"), "#" %></li>
+        <li><%= link_to t(".remove"), "#" %></li>
+        <li><%= link_to t(".edit"), "#" %></li>
+      </ul>
+    </li>
+    
+    <li>
+      <%= link_to t(".users"), "#pageSubmenu", data:{toggle: "collapse"}, aria:{expanded: false} %>
+      <ul class="collapse list-unstyled" id="pageSubmenu">
+        <li><%= link_to t(".list"), "#" %></li>
+        <li><%= link_to t(".find"), "#" %></li>
+      </ul>
+    </li>
+
+    <li>
+      <%= link_to t(".booking"), "#" %>
+    </li>
+
+    <li>
+      <%= link_to t(".feedback"), "#" %>
+    </li>
+  </ul>
+</nav>

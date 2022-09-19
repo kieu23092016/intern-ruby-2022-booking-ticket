@@ -1,0 +1,36 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+        <i class="glyphicon glyphicon-align-left"></i>
+        <span><%= t ".toggle" %></span>
+      </button>
+      <%= link_to "EN", locale:"en" %><span>|</span>
+      <%= link_to "VN", class: "active", locale:"vi" %>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+          <li>
+            <div class="dropdown">
+              <%= link_to("#", class: "dropdown-toggle", data:{toggle: "dropdown"}) do %>
+                <i class="fa-duotone fa-user"></i><span><%= @current_user.user_name %></span>
+              <% end %>
+              <div class="dropdown-menu">
+                <%= link_to t(".account"), "#", class: "dropdown-item" %>
+                <%= link_to t(".exit"), logout_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </div>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to(login_path, id: "loginLink" ) do %>
+              <i class="fa-solid fa-user"></i> <%= t ".login" %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

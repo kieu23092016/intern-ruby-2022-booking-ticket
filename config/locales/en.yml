@@ -33,6 +33,20 @@ en:
       galaxy_cinema: Galaxy Cinema
       download_app: Download APP
       company_name: Thien Ngan Movie Company, Floor 5, Song Hong Sun Building, 23 Phan Chu Trinh, Phan Chu Trinh District, Hoan Kiem, Ha Noi
+    admin:
+      header:
+        toggle: Toggle Sidebar
+      sidebar:
+        management: Management
+        movies: Movies Management
+        add: Add Movies
+        remove: Remove Movies
+        edit: Edit Movies
+        users: Users Management
+        list: Users List
+        find: Find User
+        booking: Booking Management
+        feedback: Feedback Management
   bookings:
     show:
       booking: Booking

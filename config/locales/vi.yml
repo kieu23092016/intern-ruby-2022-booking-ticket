@@ -40,6 +40,20 @@ vi:
       galaxy_cinema: Kết nối Galaxy Cinema
       download_app: Download
       company_name: Công Ty Cổ Phần Phim Thiên Ngân, Tầng 5, Toà Nhà Mặt Trời Sông Hồng, 23 Phan Chu Trinh, Phường Phan Chu Trinh, Quận Hoàn Kiếm, Hà Nội
+    admin:
+      header:
+        toggle: Chuyển đổi thanh bên
+      sidebar:
+        management: Quản lý
+        movies: Quản lý phim
+        add: Thêm phim
+        remove: Xóa phim
+        edit: Sửa phim
+        users: Quản lý người dùng
+        list: Danh sách người dùng
+        find: Tìm kiếm người dùng
+        booking: Quản lý đặt vé
+        feedback: Quản lý phản hồi
   bookings:
     show:
       booking: Đặt vé xem phim

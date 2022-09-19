@@ -1,7 +1,6 @@
+start=1231231231
 
-start=1234567890
-
-99.times do |n|
+50.times do |n|
   user_name = "Michael Harlt"
   email = "example-#{n + 1}@railstutorial.org"
   password = "password"
