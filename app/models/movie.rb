@@ -4,7 +4,7 @@ class Movie < ApplicationRecord
                    director cast age_range category_id).freeze
 
   has_many :comments, dependent: :destroy
-  has_many :show_times, dependent: :destroy
+  has_many :show_times, dependent: :restrict_with_exception
   belongs_to :category
 
   validates :title, presence: true

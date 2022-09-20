@@ -7,6 +7,10 @@ vi:
   updated: Đã thêm phim
   not_updated: Phim chưa được thêm!
   seat_cant_choose: Không thể chọn ghế này
+  deleted: Xóa thành công!
+  not_deleted: Xóa không thành công!
+  changed: Đã thay đổi!
+  not_changed: Chưa thay đổi!
   text:
     intern_ruby: InternRuby2022BookingTicket
     user_not_found: Không tìm thấy người dùng
@@ -106,6 +110,7 @@ vi:
       movie:
         change: Thay đổi
         delete: Xóa
+        del_confirm: Bạn chắc chắn muốn xóa chứ?
     shared:
       movie_form:
         add: Thêm phim
@@ -120,6 +125,20 @@ vi:
         link: Liên kết ảnh phim
         category: Thể loại
         submit: Xác nhận
+      movie_edit_form:
+        edit: Thay đổi  nội dung phim
+        title: Tiêu đề
+        description: Nội dung mô tả
+        duration: Thời lượng
+        release: Thời gian phát hành
+        language: Ngôn ngữ
+        director: Đạo diễn
+        cast: Diễn viên
+        range: Độ tuổi
+        link: Liên kết ảnh phim
+        category: Thể loại
+        submit: Xác nhận
+        change_confirm: Lưu thay đổi?
       movies_list:
         id: Thứ tự
         title: Tiêu đề
