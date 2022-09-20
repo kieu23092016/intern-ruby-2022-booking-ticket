@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       log_in @user
       redirect_to root_url
     else
-      flash.now[:danger] = t("text.user_not_found")
+      flash.now[:danger] = t "text.user_not_found"
       render :new
     end
   end
