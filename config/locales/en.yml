@@ -1,6 +1,8 @@
 en:
   film_not_found: Film not found
   not_del: Not deleted!
+  updated: Updated
+  not_updated: Not updated!
   text:
     intern_ruby: InternRuby2022BookingTicket
     sign_in_message: Please sign in before you purchase your ticket to accumulate points, and get more incentives from the Galaxy Cinema membership program.
@@ -37,11 +39,12 @@ en:
       header:
         toggle: Toggle Sidebar
       sidebar:
-        management: Management
+        home: Home Page
+        management_bar: Management Bar
         movies: Movies Management
         add: Add Movies
         remove: Remove Movies
-        edit: Edit Movies
+        mlist: Movies List
         users: Users Management
         list: Users List
         find: Find User
@@ -59,3 +62,30 @@ en:
       category: Category
       release_time: Release time
       main_content: Main content
+  admin:
+    movies:
+      movie:
+        change: Change
+        delete: Delete
+    shared:
+      movie_form:
+        add: Add movie
+        title: Title
+        description: Description
+        duration: Duration
+        release: Release Time
+        language: Language
+        director: Director
+        cast: Cast
+        range: Age Range
+        link: Link image movie
+        category: Category
+        submit: Submit
+      movies_list:
+        id: ID
+        title: Title
+        duration: Duration
+        release: Release Time
+        range: Age Range
+        category: Category
+        add: + Add movie

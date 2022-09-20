@@ -4,6 +4,8 @@ vi:
   seat_not_found: Ghế không tồn tại
   show_time_not_found: Không tồn tại lịch chiếu
   not_del: Không được xóa!
+  updated: Đã thêm phim
+  not_updated: Phim chưa được thêm!
   text:
     intern_ruby: InternRuby2022BookingTicket
     user_not_found: Không tìm thấy người dùng
@@ -47,11 +49,12 @@ vi:
       header:
         toggle: Chuyển đổi thanh bên
       sidebar:
-        management: Quản lý
+        home: Trang chủ
+        management_bar: Thanh quản lý
         movies: Quản lý phim
         add: Thêm phim
         remove: Xóa phim
-        edit: Sửa phim
+        mlist: Danh sách phim
         users: Quản lý người dùng
         list: Danh sách người dùng
         find: Tìm kiếm người dùng
@@ -97,3 +100,30 @@ vi:
       seat_selected: Ghế đang chọn
       seat_unavailable: Ghế đã bán
       seat_normal: Có thể chọn
+  admin:
+    movies:
+      movie:
+        change: Thay đổi
+        delete: Xóa
+    shared:
+      movie_form:
+        add: Thêm phim
+        title: Tiêu đề
+        description: Nội dung mô tả
+        duration: Thời lượng
+        release: Thời gian phát hành
+        language: Ngôn ngữ
+        director: Đạo diễn
+        cast: Diễn viên
+        range: Độ tuổi
+        link: Liên kết ảnh phim
+        category: Thể loại
+        submit: Xác nhận
+      movies_list:
+        id: Thứ tự
+        title: Tiêu đề
+        duration: Thời lượng
+        release: Thời gian phát hành
+        range: Độ tuổi
+        category: Thể loại
+        add: + Thêm phim

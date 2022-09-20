@@ -112,8 +112,8 @@ ActiveRecord::Schema.define(version: 2022_09_21_024054) do
     t.boolean "sex"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
     t.boolean "admin"
+    t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["phone"], name: "index_users_on_phone", unique: true
   end
