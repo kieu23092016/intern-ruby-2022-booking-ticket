@@ -17,6 +17,7 @@
                 </div>
               </form>
             </div>
+
             <div class="secondary-nav-wrapper">
               <ul class="secondary-nav">
                 <% if logged_in? %>
@@ -27,6 +28,9 @@
                       <% end %>
                       <div class="dropdown-menu">
                         <%= link_to t(".account"), "#", class: "dropdown-item" %>
+                        <% if current_user.admin? %>
+                          <%= link_to "Admin", admin_root_path, class: "dropdown-item" %>
+                        <% end %>
                         <%= link_to t(".exit"), logout_path, method: :delete, class: "dropdown-item" %>
                       </div>
                     </div>
