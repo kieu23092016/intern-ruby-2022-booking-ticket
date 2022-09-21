@@ -16,6 +16,35 @@ module SessionsHelper
 
   def log_out
     session.delete(:user_id)
+    session.delete(:tickets_id)
     @current_user = nil
+  end
+
+  def add_session_tickets id
+    session[:tickets_id] = [] if session[:tickets_id].blank?
+    session[:tickets_id] << id
+  end
+
+  def delete_session_ticket id
+    session[:tickets_id].delete(id)
+  end
+
+  def destroy_instances_seats
+    return if session[:tickets_id].blank?
+
+    session[:tickets_id].each do |ticket_id|
+      ticket = Ticket.find_by(id: ticket_id)
+      ticket.seat.destroy
+    end
+    session.delete(:tickets_id)
+  end
+
+  def load_seats
+    @seats = []
+    session[:tickets_id].each do |ticket_id|
+      ticket = Ticket.find_by(id: ticket_id)
+      @seats << ticket.seat.seat_number
+    end
+    @seats
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_21_024054) do
+ActiveRecord::Schema.define(version: 2022_09_21_043109) do
 
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -78,6 +78,10 @@ ActiveRecord::Schema.define(version: 2022_09_21_024054) do
     t.integer "seat_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "tickets_id"
+    t.bigint "show_time_id"
+    t.index ["show_time_id"], name: "index_seats_on_show_time_id"
+    t.index ["tickets_id"], name: "index_seats_on_tickets_id"
   end
 
   create_table "show_times", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -87,20 +91,21 @@ ActiveRecord::Schema.define(version: 2022_09_21_024054) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "movie_id"
     t.bigint "room_id"
+    t.bigint "seat_id"
     t.index ["movie_id"], name: "index_show_times_on_movie_id"
     t.index ["room_id"], name: "index_show_times_on_room_id"
+    t.index ["seat_id"], name: "index_show_times_on_seat_id"
   end
 
   create_table "tickets", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "price"
-    t.integer "ticket_type"
-    t.string "seat_number"
-    t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "show_time_id"
     t.bigint "payment_id"
+    t.bigint "seat_id"
     t.index ["payment_id"], name: "index_tickets_on_payment_id"
+    t.index ["seat_id"], name: "index_tickets_on_seat_id"
     t.index ["show_time_id"], name: "index_tickets_on_show_time_id"
   end
 

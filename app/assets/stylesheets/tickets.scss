@@ -303,6 +303,9 @@ span.notice {
     li.cinema-selected{
       background-color: $cinema-unavailable;
     }
+    li.cinema-choosen{
+      background-color: $cinema-select;
+    }
   }
 }
 

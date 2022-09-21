@@ -2,170 +2,55 @@
 <div class = "container">
   <div class = "row">
     <div class="container">
-      <div class="col-md-9">
-        <div class="ticket-wrapper">
-          <div class="booking-bg">
-            <div class="row">
-              <div class="col-md-12">
-                <section class="booking-ticket">
-                  <h2 id="choose-ticket-food" class="booking-title"><%= t ".choose_ticket" %></h2>
-                  <div class="table-responsive">
-                    <table class="table table-striped booking-ticket-table">
-                      <colgroup>
-                        <col width="45%">
-                        <col width="25%">
-                        <col width="15%">
-                        <col width="15%">
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <th><%= t ".ticket_type" %></th>
-                          <th><%= t ".amount" %></th>
-                          <th><%= t ".price" %></th>
-                          <th><%= t ".sum" %></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <p><b><%= t ".standard_ticket" %></b></p>
-                            <p class="des-corn"><%= t ".standard" %></p>
-                          </td>
-                          <td>
-                            <div class="input-group input-booking">
-                              <span class="input-group-btn">
-                              <button type="button" class="btn btn-addminus" disabled="disabled">
-                              <span><i class="fa-solid fa-minus"></i></span>
-                              </button>
-                              </span>
-                              <input type="number" class="form-control input-number">
-                              <span class="input-group-btn">
-                              <button type="button" class="btn btn-addminus">
-                                <span><i class="fa-solid fa-circle-plus"></i></span>
-                              </button>
-                              </span>
-                            </div>
-                          </td>
-                          <td><%= Settings.price.standard %></td>
-                          <td>0</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <p><b><%= t ".vip_ticket" %></b></p>
-                            <p class="des-corn"><%= t ".vip" %></p>
-                          </td>
-                          <td>
-                            <div class="input-group input-booking">
-                              <span class="input-group-btn">
-                              <button type="button" class="btn btn-addminus" disabled="disabled">
-                              <span><i class="fa-solid fa-minus"></i></span>
-                              </button>
-                              </span>
-                              <input type="number" class="form-control input-number">
-                              <span class="input-group-btn">
-                              <button type="button" class="btn btn-addminus">
-                              <span><i class="fa-solid fa-circle-plus"></i></span>
-                              </button>
-                              </span>
-                            </div>
-                          </td>
-                          <td><%= Settings.price.vip %></td>
-                          <td>0</td>
-                        </tr>
-                        <tr class="total">
-                          <td colspan="3"><%= t ".sum" %></td>
-                          <td>0</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </section>
-              </div>
-              <div class="col-md-12">
-                <section class="booking-ticket">
-                  <h2 class="booking-title">
-                    <%= t ".choose_seat" %>:  &nbsp;
-                  </h2>
-                  <div class="seat-map-wrapper">
-                    <div class="col-md-12">
-                      <div class="seat-map ng-scope">
-                        <% index = 1 %>
-                        <% @room.row.times do |i| %>
-                          <ul class="seat-row">
-                            <li class="index"><%= Settings.seat_code.seat_letter[i] %></li>
-                            <li class="seat-col-wrapper">
-                              <ul class="seat-col">
-                                <% @room.length.times do %>
-                                  <% if @tickets.find_by(seat_number: Settings.seat_code.seat_letter[i] + index.to_s).status %>
-                                    <li class = "cinema-selected"><%= index %></li>
-                                  <% else %>
-                                    <li class = "valiable"><%= index %></li>
+        <div class="col-md-9">
+          <div class="ticket-wrapper">
+            <div class="booking-bg">
+              <div class="row">
+                <div class="col-md-12">
+                  <section class="booking-ticket">
+                    <h2 class="booking-title">
+                      <%= t ".choose_seat" %>:  &nbsp;
+                    </h2>
+                    <div class="seat-map-wrapper">
+                      <div class="col-md-12">
+                        <div class="seat-map ng-scope">
+                          <% index = 1 %>
+                          <% @room.row.times do |i| %>
+                            <ul class="seat-row ng-scope">
+                              <li class="index"><%= Settings.seat_code.seat_letter[i] %></li>
+                              <li class="seat-col-wrapper" style="width:378px">
+                                <ul class="seat-col">
+                                  <% @room.length.times do %>
+                                    <% if seat_status(@seats, Settings.seat_code.seat_letter[i] + index.to_s) == (Settings.ticket_status.unavailable || Settings.ticket_status.choosen)%>
+                                      <li class = "cinema-selected"><%= index %></li>
+                                    <% else %>
+                                      <li class = "available">
+                                        <%= link_to index, ticket_path(seat_number: (Settings.seat_code.seat_letter[i] + index.to_s)), remote: true, method: :post, id: "#{Settings.seat_code.seat_letter[i] + index.to_s}" %>
+                                      </li>
+                                    <% end %>
+                                    <% index += 1 %>
                                   <% end %>
-                                  <% index += 1 %>
-                                <% end %>
-                              </ul>
-                            </li>
-                            <li class="index"><%= Settings.seat_code.seat_letter[i] %></li>
-                          </ul>
-                        <% end %>
-                        <div class="screen"><%= t ".screen" %></div>
-                        <div class="seat-cinema">
-                          <span class="seat-cinema-selected"><%= t ".seat_selected" %></span>
-                          <span class="seat-cinema-unavailable"><%= t ".seat_unavailable" %></span>
-                          <span class="seat-cinema-normal"><%= t ".seat_normal" %></span>
+                                </ul>
+                              </li>
+                              <li class="index"><%= Settings.seat_code.seat_letter[i] %></li>
+                            </ul>
+                          <% end %>
+                          <div class="screen"><%= t ".screen" %></div>
+                            <div class="seat-cinema">
+                            <span class="seat-cinema-selected"><%= t ".seat_selected" %></span>
+                            <span class="seat-cinema-unavailable"><%= t ".seat_unavailable" %></span>
+                            <span class="seat-cinema-normal"><%= t ".seat_normal" %></span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </section>
+                  </section>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="ticket-header ticket-header-feature">
-          <section class="ticket-feature">
-            <article class="row">
-              <div class="col-md-12 image-div">
-                <%= image_tag @movie.img_link %>
-              </div>
-              <div class="col-md-12">
-                <div class="ticket-detail">
-                  <h2 class="ticket-title upper-text"><%= @movie.title %></h2>
-                  <h2 class="ticket-title vn upper-text"><%= @movie.title %></h2>
-                  <div class="ticket-icon"></i><span class="notice"> <%= t ".movie_range" %> <%= @movie.age_range %> <%= t ".age_notice" %></span></div>
-                  <div class="ticket-info">
-                    <div class="dotted-line"><b><%= t ".cinema" %>: &nbsp;</b><%= @room.cinema.name %>&nbsp; | <%= @room.id %>&nbsp;</div>
-                    <div class="dotted-line">
-                      <b><%= t ".show_time" %>: &nbsp;</b>
-                      <%= @show_time.start_time.to_s(:time)%> &nbsp; |
-                      <%= t("time.date.day_names")[@show_time.start_time.wday] %>,
-                      <%= @show_time.start_time.strftime(t "time.formats.default")%>
-                    </div>
-                    <div class="dotted-line"><b><%= t ".combo" %>: &nbsp;</b></div>
-                    <div class="dotted-line">
-                      <b><%= t ".seat" %>: &nbsp;</b>
-                      <span class="select-seat"></span>
-                    </div>
-                  </div>
-                  <div class="ticket-price-total">
-                    <p>
-                      <%= t ".sum" %>: &nbsp;
-                      <span>0 VNĐ</span>
-                    </p>
-                  </div>
-                  <div class="ticket-button">
-                    <%= link_to("#", class: "btn primary-arrow primary-arrow-right right") do %>
-                      <%= t ".continue"%><i class="fa-sharp fa-solid fa-arrow-right"></i>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </section>
-        </div>
-      </div>
+        <%= render "movie_ticket_info" %>
     </div>
   </div>
 </div>
