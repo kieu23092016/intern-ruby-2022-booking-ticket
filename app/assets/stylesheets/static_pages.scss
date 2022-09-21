@@ -1,9 +1,7 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
 .galaxy-header {
   background-color: #f7f9fa;
 }
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -11,10 +9,12 @@
   margin-left: auto;
   min-width: 970px;
 }
+
 .row {
   margin-right: -15px;
   margin-left: -15px;
 }
+
 .header-nav-wrapper {
   position: relative;
   .logo{
@@ -85,14 +85,17 @@ a img {
     }
   }
 }
+
 input, textarea {
   outline: none;
   border-radius: 0;
   -webkit-appearance: none;
 }
+
 input {
   line-height: normal;
 }
+
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon' !important;
   speak: none;
@@ -104,6 +107,7 @@ input {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .secondary-nav-wrapper {
   margin: 33px 0 20px 15px;
   float: right;
@@ -210,10 +214,12 @@ input {
   background-color: #1a1a1a;
   padding: 40px 15px 20px 15px;
 }
+
 .list-unstyled {
   padding-left: 0;
   list-style: none;
 }
+
 .title-widget {
   color: rgba(255, 255, 255, 0.7);
   font-size: 18px;
@@ -223,6 +229,7 @@ input {
   margin: 0 0 25px 0;
   padding-left: 16px;
 }
+
 .widget_nav_menu ul {
   list-style: outside none none;
   padding-left: 0;
@@ -236,14 +243,17 @@ input {
     color: #d8d8d8;
   }
 }
+
 .footer-line {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 .footer-bottom {
   min-height: 30px;
   width: 100%;
   background-color: #1a1a1a;
 }
+
 .ano-trade .wrap-icon {
     padding-left: 0px;
     text-align: right;

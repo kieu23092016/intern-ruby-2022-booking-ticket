@@ -1,5 +1,8 @@
 vi:
   film_not_found: Không tìm thấy phim
+  room_not_found: Không tìm thấy phòng chiếu
+  seat_not_found: Ghế không tồn tại
+  show_time_not_found: Không tồn tại lịch chiếu
   not_del: Không được xóa!
   text:
     intern_ruby: InternRuby2022BookingTicket
@@ -69,3 +72,28 @@ vi:
   time:
     formats:
       default: "%d/%m/%Y"
+    date:
+      day_names: [Chủ nhật, Thứ hai, Thứ ba, Thứ tư, Thứ năm, Thứ sáu, Thứ bảy]
+  tickets:
+    show:
+      choose_ticket: Chọn vé
+      choose_seat: Chọn ghế
+      ticket_type: Loại vé
+      amount: Số lượng
+      price: Giá (VNĐ)
+      sum: Tổng (VNĐ)
+      standard: Vé tiêu chuẩn
+      standard_ticket: Standard
+      vip_ticket: Vip
+      vip: Vé Vip
+      continue: Tiếp tục
+      movie_range: (*) Phim chỉ dành cho khán giả từ
+      age_notice: tuổi trở lên
+      cinema: Rạp
+      show_time: Suất chiếu
+      combo: Combo
+      seat: Ghế
+      screen: Màn hình
+      seat_selected: Ghế đang chọn
+      seat_unavailable: Ghế đã bán
+      seat_normal: Có thể chọn

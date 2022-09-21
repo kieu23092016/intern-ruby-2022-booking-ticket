@@ -1,8 +1,8 @@
-start=1231231231
+start=1000000000
 
-50.times do |n|
+10.times do |n|
   user_name = "Michael Harlt"
-  email = "example-#{n + 1}@railstutorial.org"
+  email = "example-#{n + 1}@gmail.com"
   password = "password"
   User.create!(user_name: user_name,
     email: email,
@@ -23,7 +23,7 @@ cinemaNames.each {|cinemaName|
 }
 cinemas = Cinema.all
 10.times do
-  cinemas.each { |cinema| cinema.rooms.create!(row: 20, length: 30) }
+  cinemas.each { |cinema| cinema.rooms.create!(row: 6, length: 8) }
 end
 
 
@@ -50,6 +50,7 @@ end
                  language: language, director: director, cast: cast,
                  age_range: age_range, category_id: category_id, img_link: img_link)
 end
+
 time = Time.now
 movies = Movie.all
 rooms = Room.all
@@ -62,4 +63,29 @@ movies.each{ |movie|
     )
     time = end_time
   }
+}
+users = User.all[1..10]
+users.each{ |user|
+  payment_time = "19/9/2022"
+  total_cost = 65000
+  Payment.create!(
+    status: "approved", user_id: user.id, payment_time: payment_time, total_cost: total_cost
+  )
+}
+payments = Payment.all
+show_times = ShowTime.all.each{ |show_time|
+  room = show_time.room
+  index = 1
+  room.row.times do |i|
+    room.length.times do
+      price = 65000
+      ticket_type = "Standard"
+      status = [true, false].sample
+      seat_number = Settings.seat_code.seat_letter[i] + index.to_s
+      Ticket.create!(
+        price: price, ticket_type: ticket_type, status: status, show_time_id: show_time.id, seat_number: seat_number, payment_id: payments.sample.id
+      )
+      index += 1
+    end
+  end
 }
