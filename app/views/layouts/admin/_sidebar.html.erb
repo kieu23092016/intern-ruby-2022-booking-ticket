@@ -1,16 +1,15 @@
 <nav id="sidebar">
   <div class="sidebar-header">
-    <h3><%= t ".management" %></h3>
+    <h3><%= t(".management_bar") %></h3>
   </div>
 
   <ul class="list-unstyled components">
-    <li class="active">
-      <%= link_to t(".movies"), "#homeSubmenu", data:{toggle: "collapse"}, aria:{expanded: false} %>
-      <ul class="collapse list-unstyled" id="homeSubmenu">
-        <li><%= link_to t(".add"), "#" %></li>
-        <li><%= link_to t(".remove"), "#" %></li>
-        <li><%= link_to t(".edit"), "#" %></li>
-      </ul>
+    <li>
+      <%= link_to t(".home"), admin_root_path %>
+    </li>
+
+    <li>
+      <%= link_to t(".movies"), admin_movies_path, method: :get %>
     </li>
     
     <li>

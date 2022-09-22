@@ -1,0 +1,68 @@
+<div class = "block-wrapper">
+  <div class = "container">
+    <div class="row">
+      <div class="col-md-8 col-sm-8 col-xs-12">
+      <section class="detail-feature">
+        <article>
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-8 col-xs-offset-2 col-md-offset-0">
+              <div class="detail-feat-img">
+                <%= image_tag @movie.img_link, class: "loading" %>
+              </div>
+            </div>
+            <div class="details col-md-8 col-sm-8 col-xs-12">
+              <h2 class="detail-title upper-text"><%= @movie.title %></h2>
+              <div class="detail-rating">
+                <div class="rating-wrap detail ng-scope">
+                  <div class="rating-movie detail">
+                    <div class="rating-value detail">
+                      <i class="fa-sharp fa-solid fa-star star-rating"></i>
+                      <strong class="ng-binding"><%= @movie.rating %></strong><span>/10</span>
+                    </div>
+                    <br>
+                    <div class="rating-bt">
+                      <button id="rating-click" type="submit" ng-click="showRaiting()" class="btn btn-primary btn-sm">
+                      <%= t ".rating" %></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="detail-rating">
+                <span><i class="fa-regular fa-clock">&nbsp;</i><%= @movie.duration_min %>&nbsp;<%= t ".min" %></span>
+              </div>
+              <div class="detail-info">
+                <div class="detail-info-row">
+                  <label><%= t ".director" %>:&nbsp;</label>
+                  <span class="detail-info-right"><%= @movie.director %></span>
+                </div>
+                <div class="detail-info-row">
+                  <label><%= t ".cast" %>:&nbsp;</label>
+                  <span class="detail-info-right"><%= @movie.cast %></span>
+                </div>
+                <div class="detail-info-row">
+                  <label><%= t ".age_range" %>:&nbsp;</label>
+                  <span class="detail-info-right"><%= @movie.age_range %></span>
+                </div>
+                <div class="detail-info-row">
+                  <label><%= t ".language" %>:&nbsp;</label>
+                  <span class="detail-info-right"><%= @movie.language %></span>
+                </div>
+                <div class="detail-info-row">
+                  <label><%= t ".category" %>:&nbsp;</label>
+                  <span class="detail-info-right"><%= @movie.name %></span>
+                </div>
+                <div class="detail-info-row">
+                  <label><%= t ".release_time" %>:&nbsp;</label>
+                  <span class="detail-info-right"><%= @movie.release_time.strftime(t "time.formats.default") %></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+    </div>
+  </div>
+</div>

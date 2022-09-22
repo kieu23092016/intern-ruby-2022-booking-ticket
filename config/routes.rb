@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :movies
       resources :categories
       resources :users
+      get "/add_movie", to: "movies#new"
     end
     resources :tickets
   end

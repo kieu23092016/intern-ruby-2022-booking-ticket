@@ -1,0 +1,78 @@
+<div class="container">
+  <h1><%= t ".add" %></h1>
+  <br>
+  <table>
+  <%= form_for(@movie, url: admin_movies_path) do |f| %>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><%= t ".title" %></label>
+      <div class="col-sm-10">
+        <%= f.text_field :title, size: "50x1", placeholder: t(".title") %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><%= t ".description" %></label>
+      <div class="col-sm-10">
+        <%= f.text_area :description, size: "70x4", placeholder: t(".description") %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><%= t ".duration" %></label>
+      <div class="col-sm-10">
+        <%= f.number_field :duration_min, size: "20x1", placeholder: t(".duration") %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><%= t ".release" %></label>
+      <div class="col-sm-10">
+        <%= f.date_field :release_time, placeholder: t(".release") %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><%= t ".language" %></label>
+      <div class="col-sm-10">
+        <%= f.text_field :language, size: "20x1", placeholder: t(".language") %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><%= t ".director" %></label>
+      <div class="col-sm-10">
+        <%= f.text_field :director, size: "50x2", placeholder: t(".director") %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><%= t ".cast" %></label>
+      <div class="col-sm-10">
+        <%= f.text_field :cast, size: "50x2", placeholder: t(".cast") %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><%= t ".range" %></label>
+      <div class="col-sm-10">
+        <%= f.text_field :age_range, size: "20x1", placeholder: t(".range") %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><%= t ".link" %></label>
+      <div class="col-sm-10">
+        <%= f.url_field :img_link, size: "50x2", placeholder: t(".link") %>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><%= t ".category" %></label>
+      <div class="col-sm-10">
+        <%= f.select :category_id, Category.all.map{|cat|[cat.name, cat.id]}, class:"custom-select my-1 mr-sm-2" %>
+      </div>
+    </div>
+    <br>
+    <%= f.submit t(".submit"), class: "btn btn-primary" %>
+  <% end %>
+</div>
