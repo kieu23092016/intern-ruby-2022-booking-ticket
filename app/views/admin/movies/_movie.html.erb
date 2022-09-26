@@ -3,8 +3,9 @@
   <td><%= link_to movie.title, admin_movie_path(id: movie.id)%>
   <td><%= movie.name %></td>
   <td><%= movie.duration_min %></td>
-  <td><%= movie.release_time.strftime(t "time.formats.default") %></td>
+  <td><%= l(movie.release_time, format: :default) %></td>
   <td><%= movie.age_range %></td>
+  <td><%= link_to t(".all"), admin_movie_show_times_path(movie_id: movie.id), method: :get %></td>
   <td><%= link_to t(".change"), edit_admin_movie_path(id: movie.id), method: :get %></td>
   <td><%= link_to t(".delete"), admin_movie_path(id: movie.id), method: :delete, 
                                       data: {confirm: t(".del_confirm")} %></td>

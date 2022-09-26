@@ -1,12 +1,16 @@
 en:
   film_not_found: Film not found
   not_del: Not deleted!
-  updated: Updated
+  updated: Movie updated
   not_updated: Not updated!
   deleted: Deleted successfully!
   not_deleted: Deleted unsuccessfully!
   changed: Changed!
   not_changed: Not changed!
+  st_updated: Showtime updated
+  time_invalid: Invalid showtime
+  time_ignore: Time inputing has been missed
+  time_overlap: Times overlap another showtime
   text:
     intern_ruby: InternRuby2022BookingTicket
     sign_in_message: Please sign in before you purchase your ticket to accumulate points, and get more incentives from the Galaxy Cinema membership program.
@@ -72,6 +76,11 @@ en:
         change: Change
         delete: Delete
         del_confirm: You sure delete?
+        all: All show times
+    show_times:
+      show_time:
+        change: Change
+        delete: Delete
     shared:
       movie_form:
         add: Add movie
@@ -93,4 +102,20 @@ en:
         release: Release Time
         range: Age Range
         category: Category
+        show_times: Show times
         add: + Add movie
+      showtimes_form:
+        add: Add show time
+        start_time: Start time
+        end_time: End time
+        room: Room
+        submit: Submit
+      showtimes_list:
+        id: ID
+        add: Showtimes for movie
+        add_btn: + Add showtime
+        start_time: Start Time
+        end_time: End Time
+        date: Date
+        room: Room
+        cinema: Cinema

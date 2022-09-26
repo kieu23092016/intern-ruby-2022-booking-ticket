@@ -1,0 +1,10 @@
+<tr>
+  <td><%= @stt %></td><% @stt += 1 %>
+  <td><%= l(show_time.start_time, format: :hms) %></td>
+  <td><%= l(show_time.end_time, format: :hms) %></td>
+  <td><%= l(show_time.start_time, format: :default) %></td>
+  <td><%= show_time.room.name %></td>
+  <td><%= show_time.room.cinema.name %></td>
+  <td><%= link_to t(".change"), "#" %></td>
+  <td><%= link_to t(".delete"), "#" %></td>
+</tr>
