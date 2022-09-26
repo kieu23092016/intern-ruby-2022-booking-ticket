@@ -15,7 +15,7 @@ digits:
 seat_code:
   seat_letter: ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 price:
-  standard: 700000
+  standard: 70000
   vip: 60000
 seat_type:
   standard: 1

@@ -11,11 +11,15 @@
           <div class="primary-nav-wrapper desktop hidden-xs hidden-sm">
             <div class="search">
               <form class="search-form">
-                <div class="input-append">
-                  <input placeholder="Tìm tên phim, diễn viên..." class="search-box" type="text" autocomplete="off">
-                  <button type="submit" class="search-btn"><i class="fa fa-thin fa-magnifying-glass"></i></button>
-                </div>
               </form>
+              <%= form_tag search_path, {class: "search-form"} do %>
+                <div class="input-append">
+                  <%= text_field_tag :search, nil, placeholder: t(".find_box"), class: "search-box" %>
+                  <%= button_tag(type: "submit", class: "search-btn") do %>
+                    <%= content_tag(:i,nil, class: "fa fa-thin fa-magnifying-glass")%>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
 
             <div class="secondary-nav-wrapper">

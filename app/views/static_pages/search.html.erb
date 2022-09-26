@@ -1,0 +1,28 @@
+<div class="block-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="search-tag">
+        <p><%= @movies.size%> <%= t("search_result") %>:&nbsp;<span><%= @search %></span></p>
+      </div>
+      <div class="search-content">
+        <div class="row">
+          <% @movies.each do |movie| %>
+            <div class="col-md-4 col-sm-6 col-xs-12" style = "max-height: 273px; margin-bottom: 10px">
+              <article class="search-item">
+                <%= link_to booking_path(id: movie.id) do%>
+                  <div class="item-thumb">
+                    <%= image_tag(movie.display_image, class: "article-image") if movie.image.attached? %>
+                  </div>
+                  <h5>
+                    <b><%= movie.title %></b>
+                  </h5>
+                <% end %>
+                <p class = "movie-description" ><%= movie.description %></p>
+              </article>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

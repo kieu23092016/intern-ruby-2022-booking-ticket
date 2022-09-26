@@ -9,13 +9,14 @@ class BookingsController < ApplicationController
     @cinemas = Cinema.get_info
   end
 
+  def date_filter; end
   private
 
   def load_movie
     @movie = Movie.find_by id: params[:id]
     return if @movie
 
-    flash[:danger] = t "film_not_found"
+    flash[:error] = t "film_not_found"
     redirect_to root_path
   end
 

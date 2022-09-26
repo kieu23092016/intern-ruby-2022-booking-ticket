@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_04_164403) do
+ActiveRecord::Schema.define(version: 2022_10_05_071102) do
+
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -84,6 +85,8 @@ ActiveRecord::Schema.define(version: 2022_10_04_164403) do
     t.string "age_range"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_movies_on_category_id"
   end
 
   create_table "payments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -152,10 +155,10 @@ ActiveRecord::Schema.define(version: 2022_10_04_164403) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
-    t.integer "admin"
+    t.boolean "admin"
     t.integer "activated"
+    t.integer "activated_at"
     t.string "activation_digest"
-    t.datetime "activated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["phone"], name: "index_users_on_phone", unique: true
   end
@@ -166,6 +169,7 @@ ActiveRecord::Schema.define(version: 2022_10_04_164403) do
   add_foreign_key "comments", "users"
   add_foreign_key "movie_categories", "categories"
   add_foreign_key "movie_categories", "movies"
+  add_foreign_key "movies", "categories"
   add_foreign_key "payments", "users"
   add_foreign_key "rooms", "cinemas"
   add_foreign_key "seats", "show_times"

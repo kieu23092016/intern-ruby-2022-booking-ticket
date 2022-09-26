@@ -73,6 +73,11 @@
                         <div class="description">
                           <p><%= @movie.description %></p>
                         </div>
+                        <div class="col-md-4 calendar" style="float: none; margin-bottom: 10px; padding: 0">
+                          <%= form_tag date_bookings_path, {class: "btn btn-select login location datepicker"} do %>
+                            <%= date_field_tag :datetime_ida, Date.today, class: "btn-select-input date"%>
+                          <% end %>
+                        </div>
                         <div class="detail-group-cinema ">
                           <%= render partial: "cinemas/cinema", locals: {cinemas: @cinemas, movie_id: @movie.id} %>
                         </div>

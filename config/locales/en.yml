@@ -125,3 +125,11 @@ en:
         date: Date
         room: Room
         cinema: Cinema
+  number:
+    currency:
+      format:
+        unit: 'VND'
+        delimiter: ','
+        separator: '.'
+        precision: 0
+        format: '%n%u'

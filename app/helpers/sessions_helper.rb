@@ -47,7 +47,7 @@ module SessionsHelper
       ticket = Ticket.find_by(id: ticket_id)
       @seats << ticket.seat.seat_number
     end
-    @seats
+    @seats.join(", ")
   end
 
   def load_payments
