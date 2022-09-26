@@ -11,6 +11,7 @@ gem "faker", "2.1.2"
 gem "figaro"
 gem "font-awesome-sass", "~> 6.2.0"
 gem "jbuilder", "~> 2.7"
+gem "jquery-rails"
 gem "mysql2", "~> 0.5"
 gem "pagy"
 gem "puma", "~> 5.0"
@@ -19,7 +20,6 @@ gem "rails-i18n"
 gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
-gem "jquery-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

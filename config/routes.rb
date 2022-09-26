@@ -14,6 +14,12 @@ Rails.application.routes.draw do
       resources :users
       get "/add_movie", to: "movies#new"
     end
-    resources :tickets
+    resources :tickets do
+      member do
+        post "/", to: "tickets#create"
+        delete "/", to: "tickets#destroy"
+      end
+    end
+    resources :payment
   end
 end

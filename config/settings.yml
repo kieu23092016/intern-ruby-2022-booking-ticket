@@ -15,3 +15,10 @@ seat_code:
 price:
   standard: 700000
   vip: 60000
+seat_type:
+  standard: 1
+  vip: 2
+ticket_status:
+  available: 1
+  choosen: 2
+  unavailable: 3

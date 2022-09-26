@@ -1,0 +1,36 @@
+<div class="col-md-3">
+  <div class="ticket-header ticket-header-feature">
+    <section class="ticket-feature">
+      <article class="row">
+        <div style="text-align: center;" class="col-md-12">
+          <%= image_tag @movie.img_link %>
+        </div>
+        <div class="col-md-12">
+          <div class="ticket-detail">
+            <h2 class="ticket-title upper-text"><%= @movie.title %></h2>
+            <h2 class="ticket-title vn upper-text"><%= @movie.title %></h2>
+            <div class="ticket-icon"></i><span class="notice"> <%= t ".movie_range" %> <%= @movie.age_range %> <%= t ".age_notice" %></span></div>
+            <div class="ticket-info">
+              <div class="dotted-line"><b><%= t".cinema" %>: &nbsp;</b><%= @room.cinema.name %>&nbsp; | <%= @room.id %>&nbsp;</div>
+              <div class="dotted-line">
+                <b><%= t ".show_time" %>: &nbsp;</b>
+                <%= @show_time.start_time.to_s(:time)%> &nbsp; |
+                <%= t("time.date.day_names")[@show_time.start_time.wday] %>,
+                <%= @show_time.start_time.strftime(t "time.formats.default")%>
+              </div>
+              <div class="dotted-line">
+                <b><%= t ".seat" %>: &nbsp;</b>
+                <span class="select-seat"></span>
+              </div>
+            </div>
+            <div class="ticket-button">
+              <%= link_to("#", class: "btn primary-arrow primary-arrow-right right") do %>
+                <%= t ".continue"%><i class="fa-sharp fa-solid fa-arrow-right"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>
