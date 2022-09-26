@@ -1,3 +1,4 @@
+<%= provide :path, payment_path(id: @show_time.id)%>
 <br>
 <div class = "container">
   <div class = "row">
@@ -21,11 +22,11 @@
                               <li class="seat-col-wrapper" style="width:378px">
                                 <ul class="seat-col">
                                   <% @room.length.times do %>
-                                    <% if seat_status(@seats, Settings.seat_code.seat_letter[i] + index.to_s) == (Settings.ticket_status.unavailable || Settings.ticket_status.choosen)%>
+                                    <% if seat_status(@seats, Settings.seat_code.seat_letter[i] + index.to_s)%>
                                       <li class = "cinema-selected"><%= index %></li>
                                     <% else %>
                                       <li class = "available">
-                                        <%= link_to index, ticket_path(seat_number: (Settings.seat_code.seat_letter[i] + index.to_s)), remote: true, method: :post, id: "#{Settings.seat_code.seat_letter[i] + index.to_s}" %>
+                                        <%= link_to index, showtime_path(seat_number: (Settings.seat_code.seat_letter[i] + index.to_s)), remote: true, method: :post, id: "#{Settings.seat_code.seat_letter[i] + index.to_s}" %>
                                       </li>
                                     <% end %>
                                     <% index += 1 %>
@@ -50,7 +51,7 @@
             </div>
           </div>
         </div>
-        <%= render "movie_ticket_info" %>
+        <%= render partial: "movie_ticket_info", locals: {seats: nil} %>
     </div>
   </div>
 </div>

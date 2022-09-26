@@ -16,6 +16,8 @@ vi:
   time_ignore: Chưa nhập thời gian
   time_overlap: Thời gian trùng lặp với một giờ chiếu khác
   seats: Không thể xóa hay cập nhật do có vé đã đặt
+  payment_invalid: Không thể thanh toán
+  payment_success: Đặt vé thành công
   text:
     intern_ruby: InternRuby2022BookingTicket
     user_not_found: Không tìm thấy người dùng
@@ -88,7 +90,7 @@ vi:
       hms: "%H:%M"
     date:
       day_names: [Chủ nhật, Thứ hai, Thứ ba, Thứ tư, Thứ năm, Thứ sáu, Thứ bảy]
-  tickets:
+  showtimes:
     show:
       choose_ticket: Chọn vé
       choose_seat: Chọn ghế
@@ -100,17 +102,18 @@ vi:
       standard_ticket: Standard
       vip_ticket: Vip
       vip: Vé Vip
-      continue: Tiếp tục
-      movie_range: (*) Phim chỉ dành cho khán giả từ
-      age_notice: tuổi trở lên
-      cinema: Rạp
-      show_time: Suất chiếu
       combo: Combo
-      seat: Ghế
       screen: Màn hình
       seat_selected: Ghế đang chọn
       seat_unavailable: Ghế đã bán
       seat_normal: Có thể chọn
+    movie_ticket_info:
+      movie_range: (*) Phim chỉ dành cho khán giả từ
+      age_notice: tuổi trở lên
+      cinema: Rạp
+      show_time: Suất chiếu
+      seat: Ghế
+      continue: Tiếp tục
   admin:
     movies:
       movie:
