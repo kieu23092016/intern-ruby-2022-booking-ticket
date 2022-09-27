@@ -15,6 +15,7 @@ vi:
   time_invalid: Thời gian chiếu không hợp lệ
   time_ignore: Chưa nhập thời gian
   time_overlap: Thời gian trùng lặp với một giờ chiếu khác
+  seats: Không thể xóa hay cập nhật do có vé đã đặt
   text:
     intern_ruby: InternRuby2022BookingTicket
     user_not_found: Không tìm thấy người dùng
@@ -121,6 +122,7 @@ vi:
       show_time:
         change: Thay đổi
         delete: Xóa
+        del_confirm: Bạn chắc chắn muốn xóa chứ?
     shared:
       movie_form:
         add: Thêm phim
@@ -173,3 +175,9 @@ vi:
         date: Ngày
         room: Phòng
         cinema: Rạp
+      showtime_edit_form:
+        edit: Thay đổi lịch chiếu
+        start_time: Thời gian bắt đầu
+        end_time: Thời gian kết thúc
+        room: Phòng
+        submit: Xác nhận

@@ -5,6 +5,8 @@
   <td><%= l(show_time.start_time, format: :default) %></td>
   <td><%= show_time.room.name %></td>
   <td><%= show_time.room.cinema.name %></td>
-  <td><%= link_to t(".change"), "#" %></td>
-  <td><%= link_to t(".delete"), "#" %></td>
+  <td><%= link_to t(".change"), edit_admin_movie_show_time_path(movie_id: @show_times.first.movie.id, id: show_time.id),
+                                method: :get %></td>
+  <td><%= link_to t(".delete"), admin_movie_show_time_path(movie_id: @show_times.first.movie.id, id: show_time.id),
+                                method: :delete, data: {confirm: t(".del_confirm")} %></td>
 </tr>

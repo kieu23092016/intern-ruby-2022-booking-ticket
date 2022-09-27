@@ -1,8 +1,9 @@
 class ShowTime < ApplicationRecord
-  has_many :seats, dependent: :destroy
+  has_many :seats, dependent: :restrict_with_exception
   belongs_to :movie
   belongs_to :room
 
+  validate :valid_change, on: :update
   validate :valid_overlap_showtime
   before_validation :valid_format_showtime
 
@@ -31,5 +32,11 @@ class ShowTime < ApplicationRecord
     end
 
     errors.add(:start_time, message: I18n.t("time_invalid"))
+  end
+
+  def valid_change
+    return if seats.blank?
+
+    errors.add(:seats, message: I18n.t("seats"))
   end
 end
