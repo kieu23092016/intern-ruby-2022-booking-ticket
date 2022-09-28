@@ -11,6 +11,10 @@ vi:
   not_deleted: Xóa không thành công!
   changed: Đã thay đổi!
   not_changed: Chưa thay đổi!
+  st_updated: Đã thêm lịch chiếu
+  time_invalid: Thời gian chiếu không hợp lệ
+  time_ignore: Chưa nhập thời gian
+  time_overlap: Thời gian trùng lặp với một giờ chiếu khác
   text:
     intern_ruby: InternRuby2022BookingTicket
     user_not_found: Không tìm thấy người dùng
@@ -80,6 +84,7 @@ vi:
   time:
     formats:
       default: "%d/%m/%Y"
+      hms: "%H:%M"
     date:
       day_names: [Chủ nhật, Thứ hai, Thứ ba, Thứ tư, Thứ năm, Thứ sáu, Thứ bảy]
   tickets:
@@ -111,6 +116,11 @@ vi:
         change: Thay đổi
         delete: Xóa
         del_confirm: Bạn chắc chắn muốn xóa chứ?
+        all: Tất cả lịch chiếu
+    show_times:
+      show_time:
+        change: Thay đổi
+        delete: Xóa
     shared:
       movie_form:
         add: Thêm phim
@@ -146,4 +156,20 @@ vi:
         release: Thời gian phát hành
         range: Độ tuổi
         category: Thể loại
+        show_times: Lịch chiếu
         add: + Thêm phim
+      showtimes_form:
+        add: Thêm lịch chiếu cho phim
+        start_time: Thời gian bắt đầu
+        end_time: Thời gian kết thúc
+        room: Phòng
+        submit: Xác nhận
+      showtimes_list:
+        id: Thứ tự
+        add: Lịch chiếu cho phim
+        add_btn: + Thêm lịch chiếu
+        start_time: Thời gian bắt đầu
+        end_time: Thời gian kết thúc
+        date: Ngày
+        room: Phòng
+        cinema: Rạp

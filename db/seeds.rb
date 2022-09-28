@@ -38,12 +38,16 @@ puts "create room"
 
 cinemas = Cinema.all
 10.times do
-  cinemas.each { |cinema| cinema.rooms.create!(row: 6, length: 8) }
+  index = 1
+  cinemas.each { |cinema| 
+    cinema.rooms.create!(row: 6, length: 8, name: "Phòng #{index}")
+    index += 1
+  }
 end
-
 
 puts "create movie"
 
+(Admin add showtimes)
 50.times do
   title = "Before Sunrise"
   description = "While travelling on a train in Europe, Jesse, an American man, meets Celine, a French woman. On his last day in Europe before returning to the US, he decides to spend his remaining hours with her."
@@ -103,3 +107,5 @@ show_times = ShowTime.all.each{ |show_time|
     end
   end
 }
+
+

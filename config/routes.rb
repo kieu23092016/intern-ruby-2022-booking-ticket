@@ -9,7 +9,11 @@ Rails.application.routes.draw do
 
     namespace :admin do
       root "static_pages#home"
-      resources :movies
+      
+      resources :movies do
+        resources :show_times
+      end
+      
       resources :categories
       resources :users
       get "/add_movie", to: "movies#new"

@@ -1,0 +1,5 @@
+pirate:
+  time:
+    formats:
+      default: "%d/%m/%Y"
+      hms: "%H:%M"

@@ -1,0 +1,19 @@
+<h1><%= "#{t(".add")} #{@movie.title}" %></h1>
+<br>
+<%= link_to t(".add_btn"), new_admin_movie_show_time_path(movie_id: @show_times.first.movie.id), method: :get, class: "btn btn-primary btn-lg active" %>
+<br><br>
+<table class="table table-striped">
+  <tr>
+    <th><%= t ".id" %></th>
+    <th><%= t ".start_time" %></th>
+    <th><%= t ".end_time" %></th>
+    <th><%= t ".date" %></th>
+    <th><%= t ".room" %></th>
+    <th><%= t ".cinema" %></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @stt = 1 %>
+  <%= render @show_times %>
+</table>

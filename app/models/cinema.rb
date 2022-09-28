@@ -14,5 +14,11 @@ class Cinema < ApplicationRecord
       end
       cinema_hash
     end
+
+    def grouped_options
+      all.map do |cinema|
+        [cinema.name, cinema.rooms.pluck(:name, :id)]
+      end
+    end
   end
 end
