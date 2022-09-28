@@ -1,5 +1,12 @@
 class Admin::ShowTimesController < AdminController
   before_action :find_movie
+  before_action :find_showtime, only: %i(edit update destroy)
+
+  rescue_from ActiveRecord::DeleteRestrictionError, with: :error_del_method
+  def error_del_method
+    flash[:danger] = t "seats"
+    redirect_to admin_movie_show_times_path
+  end
 
   def index
     @show_times = @movie.show_times
@@ -21,6 +28,28 @@ class Admin::ShowTimesController < AdminController
     redirect_to admin_movie_show_times_path
   end
 
+  def edit; end
+
+  def update
+    if @show_time.update showtime_params
+      flash[:success] = t "changed"
+      redirect_to admin_movie_show_times_path
+    else
+      flash[:danger] = @show_time.errors[:seats].to_sentence
+      render :edit
+    end
+  end
+
+  def destroy
+    if @show_time.destroy
+      flash[:success] = t "deleted"
+    else
+      flash[:danger] = t "not_deleted"
+    end
+
+    redirect_to admin_movie_show_times_path
+  end
+
   private
 
   def showtime_params
@@ -33,5 +62,13 @@ class Admin::ShowTimesController < AdminController
 
     flash[:danger] = t "film_not_found"
     redirect_to admin_movies_path
+  end
+
+  def find_showtime
+    @show_time = ShowTime.find_by(id: params[:id])
+    return if @show_time
+
+    flash[:danger] = t "showtime_not_found"
+    redirect_to admin_movie_show_times_path
   end
 end
