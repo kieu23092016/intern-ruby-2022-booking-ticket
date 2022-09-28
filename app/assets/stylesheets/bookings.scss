@@ -223,3 +223,21 @@ h3:after {
   max-height: 200px;
   display: block;
 }
+.tab-movies-line li > a {
+  border: none;
+  color: #a0a3a7;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 10px 0;
+}
+.tab-movies-line .tab-content {
+  background-color: #ffffff;
+  border: 0;
+  padding: 15px 0;
+}
+
+.payment-cinema .col-md-3{
+  float: none;
+  display: flex;
+}

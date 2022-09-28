@@ -1,0 +1,50 @@
+<div class = "tab-movies-line">
+  <div class = "tab-content">
+    <div class="detail-group-cinema ">
+      <div class="cinema-block">
+        <div class = "title-cinema">
+          <h5>
+            <%= payment.updated_at.to_s(:time)%> &nbsp; |
+            <%= t("time.date.day_names")[payment.updated_at.wday] %>,
+            <%= payment.updated_at.strftime(t "time.formats.default")%>
+          </h5>
+        </div>
+        <div class="item-cinema payment-cinema">
+          <% payment.tickets.each do |ticket| %>
+            <div class="">
+              <div class="ticket-header ticket-header-feature">
+                  <section class="ticket-feature">
+                    <article class="row">
+                      <div class="col-md-12">
+                        <div class="ticket-detail">
+                          <h2 class="ticket-title upper-text"><%= ticket.seat.show_time.movie.title %></h2>
+                          <h2 class="ticket-title vn upper-text"><%= ticket.id %></h2>
+                          <div class="ticket-info">
+                            <div class="dotted-line">
+                              <b><%= t".cinema" %>: &nbsp;</b>
+                              <%= ticket.seat.show_time.room.cinema.name %>&nbsp; | <%= ticket.seat.show_time.room.id %>&nbsp;
+                              <b><%= t ".show_time" %>: &nbsp;</b>
+                              <%= ticket.seat.show_time.start_time.to_s(:time)%> &nbsp; |
+                              <%= t("time.date.day_names")[ticket.seat.show_time.start_time.wday] %>,
+                              <%= ticket.seat.show_time.start_time.strftime(t "time.formats.default")%>
+                              <b><%= t ".seat" %>: &nbsp;</b>
+                              <span class="select-seat"><%= ticket.seat.seat_number %></span>
+                            </div>
+                            <div class="dotted-line">
+                              <b><%= t ".price" %>: &nbsp;</b>
+                              <span class="select-seat"><%= ticket.price %></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </section>
+              </div>
+            </div>
+          <% end %>
+          <h4><%= t ("sum") %>: </h4> <%= payment.total_cost %>
+        </div>
+      </div>
+  </div>
+</div>
+</div>

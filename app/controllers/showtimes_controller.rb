@@ -1,4 +1,5 @@
-class TicketsController < ApplicationController
+class ShowtimesController < ApplicationController
+  before_action :logged_in_user
   before_action :load_show_time_info
 
   def show
@@ -6,11 +7,16 @@ class TicketsController < ApplicationController
   end
 
   def create
-    @seat = Seat.create(seat_number: params[:seat_number],
-                        show_time_id: @show_time.id,
-                        status: Settings.ticket_status.choosen,
-                        seat_type: Settings.seat_type.standard)
-    @ticket = Ticket.create(price: Settings.price.standard, seat_id: @seat.id)
+    Seat.transaction do
+      @seat = Seat.create(seat_number: params[:seat_number],
+                          show_time_id: @show_time.id,
+                          status: :choosen,
+                          seat_type: :standard)
+      Ticket.transaction do
+        @ticket = Ticket.create(price: Settings.price.standard,
+                                seat_id: @seat.id)
+      end
+    end
     add_session_tickets @ticket.id
     respond_to do |format|
       format.js

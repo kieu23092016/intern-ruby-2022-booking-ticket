@@ -1,3 +1,4 @@
+<%= provide :path, save_payment_payment_path(id: @payment.id) %>
 <br>
 <div class = "container">
   <div class = "row">
@@ -33,21 +34,11 @@
                             </td>
                             <td>
                               <div class="input-group input-booking">
-                                <span class="input-group-btn">
-                                <button type="button" class="btn btn-addminus" disabled="disabled">
-                                <span><i class="fa-solid fa-minus"></i></span>
-                                </button>
-                                </span>
-                                <input style="width: 60px" type="number" class="form-control input-number">
-                                <span class="input-group-btn">
-                                <button type="button" class="btn btn-addminus">
-                                  <span><i class="fa-solid fa-circle-plus"></i></span>
-                                </button>
-                                </span>
+                                <%= @tickets.size %>
                               </div>
                             </td>
                             <td><%= Settings.price.standard %></td>
-                            <td>0</td>
+                            <td><%= total_cost @tickets %></td>
                           </tr>
                           <tr>
                             <td>
@@ -56,17 +47,6 @@
                             </td>
                             <td>
                               <div class="input-group input-booking">
-                                <span class="input-group-btn">
-                                <button type="button" class="btn btn-addminus" disabled="disabled">
-                                <span><i class="fa-solid fa-minus"></i></span>
-                                </button>
-                                </span>
-                                <input style="width: 60px" type="number" class="form-control input-number">
-                                <span class="input-group-btn">
-                                <button type="button" class="btn btn-addminus">
-                                <span><i class="fa-solid fa-circle-plus"></i></span>
-                                </button>
-                                </span>
                               </div>
                             </td>
                             <td><%= Settings.price.vip %></td>
@@ -74,17 +54,18 @@
                           </tr>
                           <tr class="total">
                             <td colspan="3"><%= t ".sum" %></td>
-                            <td>0</td>
+                            <td><%= total_cost @tickets %></td>
                           </tr>
                         </tbody>
                       </table>
-                    </div>
+                  </div>
                   </section>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <%= render partial: "showtimes/movie_ticket_info", locals: {seats: load_seats} %>
     </div>
   </div>
 </div>

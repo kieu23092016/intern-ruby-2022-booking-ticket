@@ -20,11 +20,11 @@
               </div>
               <div class="dotted-line">
                 <b><%= t ".seat" %>: &nbsp;</b>
-                <span class="select-seat"></span>
+                <span class="select-seat"><%= seats%></span>
               </div>
             </div>
             <div class="ticket-button">
-              <%= link_to("#", class: "btn primary-arrow primary-arrow-right right") do %>
+              <%= link_to yield(:path), class: "btn primary-arrow primary-arrow-right right" do %>
                 <%= t ".continue"%><i class="fa-sharp fa-solid fa-arrow-right"></i>
               <% end %>
             </div>
