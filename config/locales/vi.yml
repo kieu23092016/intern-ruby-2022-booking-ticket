@@ -18,6 +18,8 @@ vi:
   seats: Không thể xóa hay cập nhật do có vé đã đặt
   payment_invalid: Không thể thanh toán
   payment_success: Đặt vé thành công
+  valid_img_format: phải là một định dạng hình ảnh hợp lệ
+  valid_img_volume: phải nhỏ hơn 5MB
   text:
     intern_ruby: InternRuby2022BookingTicket
     user_not_found: Không tìm thấy người dùng
@@ -184,3 +186,6 @@ vi:
         end_time: Thời gian kết thúc
         room: Phòng
         submit: Xác nhận
+      error_message:
+        form_err: Trong biểu mẫu có
+        error: "lỗi sau: "

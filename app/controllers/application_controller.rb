@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   def logged_in_user
     return if logged_in?
 
-    flash[:danger] = t("text.login_required")
+    flash[:error] = t("text.login_required")
     redirect_to login_url
   end
 end

@@ -3,7 +3,10 @@ import Turbolinks from 'turbolinks'
 import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
 import 'bootstrap'
-require('jquery')
+
+global.$ = require('jquery')
+require('select2')
+global.toastr = require('toastr')
 
 Rails.start()
 Turbolinks.start()
@@ -13,4 +16,6 @@ $(document).ready(function () {
   $('#sidebarCollapse').on('click', function () {
       $('#sidebar').toggleClass('active');
   });
+
+  $('.select2-form').select2();
 });

@@ -4,7 +4,7 @@ class Admin::ShowTimesController < AdminController
 
   rescue_from ActiveRecord::DeleteRestrictionError, with: :error_del_method
   def error_del_method
-    flash[:danger] = t "seats"
+    flash[:error] = t "seats"
     redirect_to admin_movie_show_times_path
   end
 
@@ -22,7 +22,7 @@ class Admin::ShowTimesController < AdminController
     if @show_time.save
       flash[:success] = t "st_updated"
     else
-      flash[:danger] = @show_time.errors[:start_time].to_sentence
+      flash[:error] = @show_time.errors[:start_time].to_sentence
     end
 
     redirect_to admin_movie_show_times_path
@@ -35,7 +35,7 @@ class Admin::ShowTimesController < AdminController
       flash[:success] = t "changed"
       redirect_to admin_movie_show_times_path
     else
-      flash[:danger] = @show_time.errors[:seats].to_sentence
+      flash[:error] = @show_time.errors[:seats].to_sentence
       render :edit
     end
   end
@@ -44,7 +44,7 @@ class Admin::ShowTimesController < AdminController
     if @show_time.destroy
       flash[:success] = t "deleted"
     else
-      flash[:danger] = t "not_deleted"
+      flash[:error] = t "not_deleted"
     end
 
     redirect_to admin_movie_show_times_path
@@ -60,7 +60,7 @@ class Admin::ShowTimesController < AdminController
     @movie = Movie.find_by(id: params[:movie_id])
     return if @movie
 
-    flash[:danger] = t "film_not_found"
+    flash[:error] = t "film_not_found"
     redirect_to admin_movies_path
   end
 
@@ -68,7 +68,7 @@ class Admin::ShowTimesController < AdminController
     @show_time = ShowTime.find_by(id: params[:id])
     return if @show_time
 
-    flash[:danger] = t "showtime_not_found"
+    flash[:error] = t "showtime_not_found"
     redirect_to admin_movie_show_times_path
   end
 end
