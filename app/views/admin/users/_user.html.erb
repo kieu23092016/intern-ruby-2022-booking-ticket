@@ -1,0 +1,13 @@
+<tr>
+  <td><%= @stt %></td><% @stt += 1 %>
+  <td><%= user.user_name %>
+  <td><%= user.email %></td>
+  <td><%= user.phone %></td>
+  <td><%= l(user.date_birth, format: :default) %></td>
+  <td><%= user.sex %></td>
+  <td><%= "#{l(user.created_at, format: :hms)} |
+           #{t("time.date.day_names")[user.created_at.wday]},
+           #{l(user.created_at, format: :default)}" %></td>
+  <td><%= link_to t(".delete"), admin_user_path(id: user.id), method: :delete, 
+                                      data: {confirm: t(".del_confirm")} %></td>
+</tr>

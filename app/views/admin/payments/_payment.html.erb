@@ -1,0 +1,9 @@
+<tr>
+  <td><%= @stt %></td><% @stt += 1 %>
+  <td><%= payment.user_name %></td>
+  <td><%= "#{l(payment.updated_at, format: :hms)} |
+           #{t("time.date.day_names")[payment.updated_at.wday]},
+           #{l(payment.updated_at, format: :default)}" %></td>
+  <td><%= payment.status %></td>
+  <td><%= link_to t(".details"), admin_payment_path(id: payment.id), metdod: :get %></td>
+</tr>

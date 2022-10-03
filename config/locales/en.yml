@@ -14,6 +14,9 @@ en:
   seats: Not destroy or update because of booking before
   valid_img_format: Must be a valid image format
   valid_img_volume: Should be less than 5MB
+  pm_not_found: Payment not found!
+  not_change_admin: Do not allow change admin role
+  not_found_user: Not found user  
   text:
     intern_ruby: InternRuby2022BookingTicket
     sign_in_message: Please sign in before you purchase your ticket to accumulate points, and get more incentives from the Galaxy Cinema membership program.

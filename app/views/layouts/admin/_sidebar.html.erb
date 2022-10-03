@@ -15,13 +15,13 @@
     <li>
       <%= link_to t(".users"), "#pageSubmenu", data:{toggle: "collapse"}, aria:{expanded: false} %>
       <ul class="collapse list-unstyled" id="pageSubmenu">
-        <li><%= link_to t(".list"), "#" %></li>
+        <li><%= link_to t(".list"), admin_users_path, method: :get %></li>
         <li><%= link_to t(".find"), "#" %></li>
       </ul>
     </li>
 
     <li>
-      <%= link_to t(".booking"), "#" %>
+      <%= link_to t(".booking"), admin_payments_path, method: :get %>
     </li>
 
     <li>

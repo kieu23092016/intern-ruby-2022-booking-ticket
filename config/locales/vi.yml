@@ -20,6 +20,10 @@ vi:
   payment_success: Đặt vé thành công
   valid_img_format: phải là một định dạng hình ảnh hợp lệ
   valid_img_volume: phải nhỏ hơn 5MB
+  pm_not_found: Không tìm thấy hóa đơn!
+  not_change_admin: Bạn không có quyền sửa đổi thông tin admin
+  not_delete_admin: Bạn không có quyền xóa tài khoản admin
+  not_found_user: Không tìm thấy người dùng
   text:
     intern_ruby: InternRuby2022BookingTicket
     user_not_found: Không tìm thấy người dùng
@@ -90,6 +94,7 @@ vi:
     formats:
       default: "%d/%m/%Y"
       hms: "%H:%M"
+      full: "%H:%M %d/%m/%Y"
     date:
       day_names: [Chủ nhật, Thứ hai, Thứ ba, Thứ tư, Thứ năm, Thứ sáu, Thứ bảy]
   showtimes:
@@ -128,6 +133,19 @@ vi:
         change: Thay đổi
         delete: Xóa
         del_confirm: Bạn chắc chắn muốn xóa chứ?
+    payments:
+      payment:
+        details: Chi tiết
+      show:
+        cinema: Rạp
+        show_time: Thời gian chiếu
+        seat: Ghế
+        price: Giá vé
+        sum: Tổng tiền
+    users:
+      user:
+        delete: Xóa tài khoản
+        del_confirm: Bạn có chắc muốn xóa tài khoản này không?
     shared:
       movie_form:
         add: Thêm phim
@@ -189,3 +207,19 @@ vi:
       error_message:
         form_err: Trong biểu mẫu có
         error: "lỗi sau: "
+      payments_list:
+        manage: Quản lý đơn đặt vé
+        id: Số thứ tự
+        customer: Khách hàng
+        created_at: Thời gian tạo đơn
+        status: Tình trạng đơn
+        details: Chi tiết vé đặt
+      users_list:
+        manage: Quản lý người dùng
+        id: Số thứ tự
+        name: Họ tên
+        email: Email
+        phone: Số điện thoại
+        date_birth: Ngày sinh
+        sex: Giới tính
+        created_at: Ngày tạo tài khoản

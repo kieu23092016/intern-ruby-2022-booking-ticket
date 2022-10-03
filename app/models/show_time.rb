@@ -7,6 +7,10 @@ class ShowTime < ApplicationRecord
   validate :valid_overlap_showtime
   before_validation :valid_format_showtime
 
+  delegate :cinema_name, to: :room
+  delegate :title, to: :movie, prefix: :movie
+  delegate :name, to: :room, prefix: :room
+
   scope :find_room, ->(room_id){where "room_id = ?", room_id}
   scope :overlap, lambda {|start_time, end_time|
                     where "((start_time < ? AND end_time > ?)
