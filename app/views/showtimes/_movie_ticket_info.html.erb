@@ -3,7 +3,7 @@
     <section class="ticket-feature">
       <article class="row">
         <div style="text-align: center;" class="col-md-12">
-          <%= image_tag @movie.img_link %>
+          <%= image_tag(@movie.display_image) if @movie.image.attached? %>
         </div>
         <div class="col-md-12">
           <div class="ticket-detail">

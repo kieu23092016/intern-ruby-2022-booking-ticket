@@ -12,6 +12,8 @@ en:
   time_ignore: Time inputing has been missed
   time_overlap: Times overlap another showtime
   seats: Not destroy or update because of booking before
+  valid_img_format: Must be a valid image format
+  valid_img_volume: Should be less than 5MB
   text:
     intern_ruby: InternRuby2022BookingTicket
     sign_in_message: Please sign in before you purchase your ticket to accumulate points, and get more incentives from the Galaxy Cinema membership program.

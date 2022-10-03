@@ -5,6 +5,10 @@ body {
   background: $white-fa;
 }
 
+.container{
+  border: 1px solid #666;
+}
+
 p {
   font-family: 'Poppins', sans-serif;
   font-size: 1.1em;
@@ -139,4 +143,11 @@ a.article, a.article:hover {
   padding: 20px;
   min-height: 100vh;
   transition: all 0.3s;
+}
+ 
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+  }
 }

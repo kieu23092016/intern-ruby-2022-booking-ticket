@@ -1,9 +1,12 @@
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import * as ActiveStorage from "@rails/activestorage"
-import "channels"
-import "bootstrap"
-require("jquery")
+import Rails from '@rails/ujs'
+import Turbolinks from 'turbolinks'
+import * as ActiveStorage from '@rails/activestorage'
+import 'channels'
+import 'bootstrap'
+
+global.$ = require('jquery')
+global.toastr = require('toastr')
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

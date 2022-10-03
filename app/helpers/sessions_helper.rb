@@ -35,6 +35,7 @@ module SessionsHelper
     session[:tickets_id].each do |ticket_id|
       ticket = Ticket.find_by(id: ticket_id)
       next if ticket.blank?
+
       ticket.seat.destroy
     end
     session.delete(:tickets_id)
@@ -77,6 +78,7 @@ module SessionsHelper
       session[:tickets_id].each do |ticket_id|
         ticket = Ticket.find_by(id: ticket_id)
         next unless ticket.update(payment_id: id)
+
         ticket.seat.unavailable!
       end
       true

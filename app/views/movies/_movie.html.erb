@@ -1,12 +1,11 @@
 <div class="col-md-4 col-sm-4 col-xs-6 movie-item">
   <div class="article-movie-home">
-    <img src=<%= "#{movie.img_link}" %> class="lazy loaded"
-                                        data-was-processed="true">    
+    <%= image_tag(movie.display_image) if movie.image.attached? %>    
     <%= link_to "", booking_path(id: movie.id),
         class: "decription-hover overlay movies-content group btn secondary-white" %>
   </div>
 
   <div class="title-movie">
     <h4 class="upper-text"><%= movie.title %></h4>
-  </div>   
-</div>               
+  </div>
+</div>

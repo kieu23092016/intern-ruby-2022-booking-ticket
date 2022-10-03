@@ -1,21 +1,25 @@
 <div class="container">
   <h1><%= t ".edit" %></h1>
-  <br>
+  <hr>
   <%= form_for(@show_time, url: admin_movie_show_time_path) do |f| %>
+    <%= render "admin/shared/error_message", object: f.object %>
     <div class="form-group row">
       <label class="col-sm-2 col-form-label"><%= t ".start_time" %></label>
       <div class="col-sm-10">
-        <%= f.datetime_field :start_time %>
+        <%= f.datetime_field :start_time, class: "form-control" %>
       </div>
     </div>
     
     <div class="form-group row">
       <label class="col-sm-2 col-form-label"><%= t ".room" %></label>
       <div class="col-sm-10">
-        <%= f.select :room_id, grouped_options_for_select(Cinema.grouped_options) %>
+        <%= f.select :room_id, grouped_options_for_select(Cinema.grouped_options), class: "form-control" %>
       </div>
     </div>
     <br>
-    <%= f.submit t(".submit"), class: "btn btn-primary" %>
+    <div class="text-center">
+      <%= f.submit t(".submit"), class: "btn btn-primary" %>
+    </div>
+    <br><br>
   <% end %>
 </div>
