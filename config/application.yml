@@ -1,0 +1,6 @@
+host: "localhost:3000"
+host_email: "vuquoccong01@gmail.com"
+mail_address: "smtp.mailtrap.io"
+mail_port: "2525"
+mail_user_name: "71f4816ac8d7d4"
+mail_user_password: "2047a039e84a91"

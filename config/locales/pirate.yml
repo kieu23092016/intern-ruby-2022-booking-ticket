@@ -3,5 +3,6 @@ pirate:
     formats:
       default: "%d/%m/%Y"
       hms: "%H:%M"
+      full: "%H:%M %d/%m/%Y"
     date:
       day_names: [Chủ nhật, Thứ hai, Thứ ba, Thứ tư, Thứ năm, Thứ sáu, Thứ bảy]

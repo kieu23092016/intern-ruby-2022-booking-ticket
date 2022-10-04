@@ -1,0 +1,57 @@
+<h1><%= t(".ticket_payment") %></h1>
+<% payment = @user.payments.last %>
+<p><%= "#{t(".dear")} #{@user.user_name}, " %></p>
+<br>
+<p><%= "#{t(".header")} #{l(payment.updated_at, format: :full)}" %></p>
+<p><%= t ".details" %></p>
+
+<div class = "tab-movies-line">
+  <div class = "tab-content">
+    <div class="detail-group-cinema ">
+      <div class="cinema-block">
+        <div class = "title-cinema">
+          <h5>
+            <%= payment.updated_at.to_s(:time)%> &nbsp; |
+            <%= t("time.date.day_names")[payment.updated_at.wday] %>,
+            <%= payment.updated_at.strftime(t "time.formats.default")%>
+          </h5>
+        </div>
+        <div class="item-cinema payment-cinema">
+          <% payment.tickets.each do |ticket| %>
+            <div class="">
+              <div class="ticket-header ticket-header-feature">
+                  <section class="ticket-feature">
+                    <article class="row">
+                      <div class="col-md-12">
+                        <div class="ticket-detail">
+                          <h2 class="ticket-title upper-text"><%= ticket.movie_title %></h2>
+                          <h2 class="ticket-title vn upper-text"><%= ticket.id %></h2>
+                          <div class="ticket-info">
+                            <div class="dotted-line">
+                              <b><%= t ".cinema" %>: &nbsp;</b>
+                              <%= ticket.cinema_name %>&nbsp; | <%= ticket.room_name %>&nbsp;
+                              <b><%= t ".show_time" %>: &nbsp;</b>
+                              <%= ticket.start_time.to_s(:time)%> &nbsp; |
+                              <%= t("time.date.day_names")[ticket.show_time.start_time.wday] %>,
+                              <%= ticket.start_time.strftime(t "time.formats.default")%>
+                              <b><%= t ".seat" %>: &nbsp;</b>
+                              <span class="select-seat"><%= ticket.seat_number %></span>
+                            </div>
+                            <div class="dotted-line">
+                              <b><%= t ".price" %>: &nbsp;</b>
+                              <span class="select-seat"><%= ticket.price %></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </section>
+              </div>
+            </div>
+          <% end %>
+          <h2><b><i><%= t (".sum") %>: </b></i></h2> <span class="sum-payment"><%= payment.total_cost %></span>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
