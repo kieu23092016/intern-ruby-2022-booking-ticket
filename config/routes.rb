@@ -6,10 +6,17 @@ Rails.application.routes.draw do
     post "/search", to: "static_pages#search"
     root "static_pages#home"
 
-    resource :bookings do
+    resources :bookings, only: [:create, :destroy] do 
+      resources :comments do 
+        post "/", to: "comments#create"
+      end
+    end
+    resource :bookings do 
       post "/date", to: "bookings#date_filter"
     end
-    resources :bookings
+    resources :bookings 
+    resources :account_activations, only: [:edit]
+
     namespace :admin do
       root "static_pages#home"
 
@@ -28,10 +35,10 @@ Rails.application.routes.draw do
         delete "/", to: "showtimes#destroy"
       end
     end
-
-    resources :payment do
+    
+    resources :payments do
       member do
-        get "/save_payment", to: "payment#create"
+        get "/save_payment", to: "payments#create"
       end
     end
   end

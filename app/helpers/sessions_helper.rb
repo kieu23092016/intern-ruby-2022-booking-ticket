@@ -61,6 +61,20 @@ module SessionsHelper
     tickets
   end
 
+  def check_tickets_status
+    session[:tickets_id].each do |ticket_id|
+      ticket = Ticket.find_by(id: ticket_id)
+      show_time_id = ticket.show_time.id
+      seat_number = ticket.seat_number
+      show_time = ShowTime.find_by(id: show_time_id)
+      next unless show_time.seats.find_by(seat_number: seat_number,
+                                          status: "unavailable")
+
+      flash[:error] = t "payment_invalid"
+      redirect_to root_path
+    end
+  end
+
   def save_payment id
     Payment.transaction do
       total_cost = session[:tickets_id].length * Settings.price.standard
@@ -89,4 +103,13 @@ module SessionsHelper
     session[:tickets_id] = []
     ticket_transaction
   end
+end
+
+def redirect_back_or default
+  redirect_to(session[:forwarding_url] || default)
+  session.delete(:forwarding_url)
+end
+
+def store_location
+  session[:forwarding_url] = request.original_url if request.get?
 end

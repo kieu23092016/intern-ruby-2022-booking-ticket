@@ -38,7 +38,7 @@ class ShowtimesController < ApplicationController
 
   def load_show_time_info
     @show_time = ShowTime.find_by id: params[:id]
-    if @show_time
+    if @show_time.start_time > Time.current
       @room = @show_time.room
       @seats = @show_time.seats
       @movie = @show_time.movie

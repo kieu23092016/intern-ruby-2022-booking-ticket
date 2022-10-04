@@ -1,4 +1,6 @@
 vi:
+  comment_created: Đăng bình luận thành công!
+  comment_failed: Không thể đăng bình luận!
   film_not_found: Không tìm thấy phim
   room_not_found: Không tìm thấy phòng chiếu
   seat_not_found: Ghế không tồn tại
@@ -17,7 +19,7 @@ vi:
   time_overlap: Thời gian trùng lặp với một giờ chiếu khác
   seats: Không thể xóa hay cập nhật do có vé đã đặt
   payment_invalid: Không thể thanh toán
-  payment_success: Đặt vé thành công
+  payment_success: Đặt vé thành công. Vui lòng kiểm tra email.
   valid_img_format: phải là một định dạng hình ảnh hợp lệ
   valid_img_volume: phải nhỏ hơn 5MB
   pm_not_found: Không tìm thấy hóa đơn!
@@ -91,6 +93,7 @@ vi:
       category: Thể loại
       release_time: Thời gian phát hành
       main_content: Nội dung chính
+      comment: Bình luận phim
   time:
     formats:
       default: "%d/%m/%Y"

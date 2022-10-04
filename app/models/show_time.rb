@@ -19,6 +19,12 @@ class ShowTime < ApplicationRecord
                           end_time, end_time, start_time,
                           start_time, start_time, end_time
                   }
+  scope :filter_date, lambda{|movie_id, date|
+                        where "(movie_id = ? AND start_time BETWEEN ? AND ? )",
+                              movie_id,
+                              date.to_datetime.beginning_of_day,
+                              date.to_datetime.end_of_day
+                      }
 
   def valid_overlap_showtime
     return if ShowTime.find_room(room_id).overlap(start_time, end_time).blank?

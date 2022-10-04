@@ -1,0 +1,3 @@
+<% if @show_date.to_date > Time.current %>
+  $('#list-show-time').html("<%= j render partial: "cinemas/cinema", locals:{cinemas: @cinemas, show_times: @show_times} %>")
+<% end %>
