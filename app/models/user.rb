@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :payments, dependent: :destroy
 
+  enum sex: {female: 0, male: 1}
+
   validates :user_name, presence: true,
             length: {maximum: Settings.digits.length_name_max_50}
 
@@ -20,4 +22,7 @@ class User < ApplicationRecord
           uniqueness: true
 
   has_secure_password
+
+  scope :sort_list, ->{order :user_name}
+  scope :filter_by_admin_role, ->{where admin: true}
 end

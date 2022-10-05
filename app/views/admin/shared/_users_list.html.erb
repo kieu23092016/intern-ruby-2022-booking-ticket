@@ -1,0 +1,18 @@
+<h1><%= t ".manage" %></h1>
+<br>
+<table class="table table-striped">
+  <tr>
+    <th><%= t ".id" %></th>
+    <th><%= t ".name" %></th>
+    <th><%= t ".email" %></th>
+    <th><%= t ".phone" %></th>
+    <th><%= t ".date_birth" %></th>
+    <th><%= t ".sex" %></th>
+    <th><%= t ".created_at" %></th>
+    <th></th>
+  </tr>
+
+  <% @stt = 1 + (@pagy.page - 1) * Settings.digits.admin_movie_per_page %>
+  <%= render @users %>
+</table>
+<%== pagy_bootstrap_nav @pagy %>

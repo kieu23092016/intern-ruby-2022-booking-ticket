@@ -3,4 +3,6 @@ class Seat < ApplicationRecord
   enum seat_type: {standard: 1, vip: 2}
   has_one :ticket, dependent: :destroy
   belongs_to :show_time
+
+  delegate :start_time, to: :show_time
 end

@@ -14,16 +14,18 @@ Rails.application.routes.draw do
         resources :show_times
       end
       
-      resources :categories
+      resources :payments
       resources :users
       get "/add_movie", to: "movies#new"
     end
+
     resources :showtimes do
       member do
         post "/", to: "showtimes#create"
         delete "/", to: "showtimes#destroy"
       end
     end
+
     resources :payment do
       member do
         get "/save_payment", to: "payment#create"

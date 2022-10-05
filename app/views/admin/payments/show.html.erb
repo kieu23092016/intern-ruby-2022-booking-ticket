@@ -1,0 +1,21 @@
+<div class = "tab-movies-line">
+  <div class = "tab-content">
+    <div class="detail-group-cinema ">
+      <div class="cinema-block">
+        <div class = "title-cinema">
+          <h5>
+            <%= @payment.updated_at.to_s(:time)%> &nbsp; |
+            <%= t("time.date.day_names")[@payment.updated_at.wday] %>,
+            <%= @payment.updated_at.strftime(t "time.formats.default") %>
+          </h5>
+        </div>
+        <div class="item-cinema payment-cinema">
+          <% @tickets.each do |ticket| %>
+            <%= render partial: "ticket", collection: @tickets %>
+          <% end %>
+          <h2><b><i><%= t (".sum") %>: </b></i></h2> <span class="sum-payment"><%= @payment.total_cost %></span>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
