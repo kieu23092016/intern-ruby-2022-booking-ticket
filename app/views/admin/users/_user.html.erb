@@ -8,6 +8,7 @@
   <td><%= "#{l(user.created_at, format: :hms)} |
            #{t("time.date.day_names")[user.created_at.wday]},
            #{l(user.created_at, format: :default)}" %></td>
+  <td><%= link_to "#{user.activated}", admin_user_path(id: user.id), method: :patch, remote: true, data: {confirm: t(".del_confirm")}, id: "#{user.id}" %></td>
   <td><%= link_to t(".delete"), admin_user_path(id: user.id), method: :delete, 
                                       data: {confirm: t(".del_confirm")} %></td>
 </tr>

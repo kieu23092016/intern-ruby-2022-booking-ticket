@@ -10,17 +10,23 @@ class Admin::UsersController < AdminController
   def edit; end
 
   def update
-    if @user.update user_params
-      flash[:success] = t "changed"
-      redirect_to admin_user_path(id: @user.id)
+    if @user.admin
+      flash[:error] = t "not_change_admin"
+      redirect_to admin_users_path
     else
-      flash[:error] = t "not_changed"
-      render :edit
+      @user.activated == "Activated" ? @user.inactivate : @user.activate
+
+      respond_to do |format|
+        format.js
+      end
     end
   end
 
   def destroy
-    if @user.destroy
+    if @user.admin
+      flash[:error] = t "not_delete_admin"
+      redirect_to admin_users_path
+    elsif @user.destroy
       flash[:success] = t "deleted"
       redirect_to request.referer || admin_users_path
     else
@@ -30,10 +36,6 @@ class Admin::UsersController < AdminController
   end
 
   private
-
-  def user_params
-    params.require(:user).permit(:email, :user_name)
-  end
 
   def find_user
     @user = User.find_by id: params[:id]

@@ -206,7 +206,7 @@ vi:
         submit: Xác nhận
       error_message:
         form_err: Trong biểu mẫu có
-        error: "lỗi sau: "
+        error: "lỗi sau:"
       payments_list:
         manage: Quản lý đơn đặt vé
         id: Số thứ tự
@@ -223,3 +223,14 @@ vi:
         date_birth: Ngày sinh
         sex: Giới tính
         created_at: Ngày tạo tài khoản
+  user_mailer:
+    ticket_payment:
+      ticket_payment: Thông báo đặt vé thành công
+      dear: Thân gửi
+      header: Bạn đã thanh toán hóa đơn thành công vào lúc
+      details: "Dưới đây là thông tin chi tiết về hóa đơn của bạn:"
+      cinema: Rạp
+      show_time: Thời gian chiếu
+      seat: Ghế
+      price: Giá vé
+      sum: Tổng tiền

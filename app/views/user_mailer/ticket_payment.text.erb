@@ -1,0 +1,6 @@
+<h1><%= t(".ticket_payment") %></h1>
+<% payment = @user.payments.last %>
+<p><%= "#{t(".dear")} #{@user.user_name}, " %></p>
+<br>
+<p><%= "#{t(".header")} #{l(payment.updated_at, format: :full)}" %></p>
+<p><%= t ".details" %></p>

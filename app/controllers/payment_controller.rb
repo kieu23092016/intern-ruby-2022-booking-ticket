@@ -14,6 +14,9 @@ class PaymentController < ApplicationController
 
   def create
     if save_ticket params[:id]
+      @user = current_user
+      @user.create_activation_digest
+      @user.send_noti_booking_email
       flash[:success] = t "payment_success"
     else
       flash[:danger] = t "payment_invalid"
