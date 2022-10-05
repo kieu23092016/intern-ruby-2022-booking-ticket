@@ -10,6 +10,13 @@
           </h5>
         </div>
         <div class="item-cinema payment-cinema">
+          <h2 class="ticket-title upper-text"><%= payment.tickets.first.seat.show_time.movie.title %></h2>
+          <b><%= t".cinema" %>: &nbsp;</b>
+          <%= payment.tickets.first.seat.show_time.room.name %>&nbsp; | <%= payment.tickets.first.seat.show_time.room_id %>&nbsp;
+          <b><%= t ".show_time" %>: &nbsp;</b>
+          <%= payment.tickets.first.seat.start_time.to_s(:time)%> &nbsp; |
+          <%= t("time.date.day_names")[payment.tickets.first.seat.start_time.wday] %>,
+          <%= payment.tickets.first.seat.start_time.strftime(t "time.formats.default")%>
           <% payment.tickets.each do |ticket| %>
             <div class="">
               <div class="ticket-header ticket-header-feature">
@@ -17,22 +24,14 @@
                     <article class="row">
                       <div class="col-md-12">
                         <div class="ticket-detail">
-                          <h2 class="ticket-title upper-text"><%= ticket.seat.show_time.movie.title %></h2>
-                          <h2 class="ticket-title vn upper-text"><%= ticket.id %></h2>
                           <div class="ticket-info">
                             <div class="dotted-line">
-                              <b><%= t".cinema" %>: &nbsp;</b>
-                              <%= ticket.seat.show_time.room.cinema.name %>&nbsp; | <%= ticket.seat.show_time.room.id %>&nbsp;
-                              <b><%= t ".show_time" %>: &nbsp;</b>
-                              <%= ticket.seat.show_time.start_time.to_s(:time)%> &nbsp; |
-                              <%= t("time.date.day_names")[ticket.seat.show_time.start_time.wday] %>,
-                              <%= ticket.seat.show_time.start_time.strftime(t "time.formats.default")%>
                               <b><%= t ".seat" %>: &nbsp;</b>
-                              <span class="select-seat"><%= ticket.seat.seat_number %></span>
+                              <span class="select-seat"><%= ticket.seat_number %></span>
                             </div>
                             <div class="dotted-line">
                               <b><%= t ".price" %>: &nbsp;</b>
-                              <span class="select-seat"><%= ticket.price %></span>
+                              <span class="select-seat"><%= number_to_currency ticket.price %></span>
                             </div>
                           </div>
                         </div>
@@ -42,7 +41,7 @@
               </div>
             </div>
           <% end %>
-          <h4><%= t ("sum") %>: </h4> <%= payment.total_cost %>
+          <h3 style="font-style: italic"><b><%= t ("sum") %>: </b><%= number_to_currency payment.total_cost %></h3>
         </div>
       </div>
   </div>

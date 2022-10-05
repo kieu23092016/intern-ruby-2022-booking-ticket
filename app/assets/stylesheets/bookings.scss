@@ -241,3 +241,32 @@ h3:after {
   float: none;
   display: flex;
 }
+
+.btn-select.login {
+  border: 1px solid #ced0da;
+  .location {
+    color: #43464b;
+    text-align: left;
+    position: relative;
+  }
+}
+
+input.date {
+  height: 38px;
+  background: none;
+  border: none;
+  padding-left: 12px;
+  width: 88%;
+}
+
+.select-calendar {
+  float: right;
+  font-size: 20px;
+  padding: 6px 10px;
+  position: absolute;
+  right: 6px;
+}
+
+.calendar{
+  float: none;
+}

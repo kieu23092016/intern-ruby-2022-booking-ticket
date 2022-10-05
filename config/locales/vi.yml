@@ -24,6 +24,7 @@ vi:
   not_change_admin: Bạn không có quyền sửa đổi thông tin admin
   not_delete_admin: Bạn không có quyền xóa tài khoản admin
   not_found_user: Không tìm thấy người dùng
+  search_result: kết quả tìm kiếm cho từ khoá
   text:
     intern_ruby: InternRuby2022BookingTicket
     user_not_found: Không tìm thấy người dùng
@@ -234,3 +235,11 @@ vi:
       seat: Ghế
       price: Giá vé
       sum: Tổng tiền
+  number:
+    currency:
+      format:
+        unit: 'VNĐ'
+        delimiter: ','
+        separator: '.'
+        precision: 0
+        format: '%n%u'

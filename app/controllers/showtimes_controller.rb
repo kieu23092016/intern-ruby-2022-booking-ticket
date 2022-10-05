@@ -43,7 +43,7 @@ class ShowtimesController < ApplicationController
       @seats = @show_time.seats
       @movie = @show_time.movie
     else
-      flash[:danger] = t "show_time_not_found"
+      flash[:error] = t "show_time_not_found"
       redirect_to root_path
     end
   end

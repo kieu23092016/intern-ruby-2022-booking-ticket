@@ -8,7 +8,7 @@ class PaymentController < ApplicationController
   def show
     return if @tickets
 
-    flash[:danger] = t "payment_invalid"
+    flash[:error] = t "payment_invalid"
     redirect_to root_path
   end
 
@@ -19,7 +19,7 @@ class PaymentController < ApplicationController
       @user.send_noti_booking_email
       flash[:success] = t "payment_success"
     else
-      flash[:danger] = t "payment_invalid"
+      flash[:error] = t "payment_invalid"
     end
     redirect_to root_path
   end
