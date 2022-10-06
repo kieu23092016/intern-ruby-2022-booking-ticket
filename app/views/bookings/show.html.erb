@@ -69,17 +69,54 @@
                     <br>
                     <auto-folded folded-height="200">
                       <div>
-                        <div class="shadow"></div>
                         <div class="description">
                           <p><%= @movie.description %></p>
                         </div>
                         <div class="col-md-4 calendar" style="float: none; margin-bottom: 10px; padding: 0">
-                          <%= form_tag date_bookings_path, {class: "btn btn-select login location datepicker"} do %>
+                         <%= form_tag date_bookings_path, {class: "btn btn-select login location datepicker"} do %>
                             <%= date_field_tag :datetime_ida, Date.today, class: "btn-select-input date"%>
                           <% end %>
                         </div>
-                        <div class="detail-group-cinema ">
-                          <%= render partial: "cinemas/cinema", locals: {cinemas: @cinemas, movie_id: @movie.id} %>
+                        <div class="detail-group-cinema">
+                          <%= render partial: "cinemas/cinema", locals: {cinemas: @cinemas, show_times: @show_times} %>
+                          <div class="title-block"><h3><%= t ".comment" %></h3></div>
+                          
+                          <%= form_tag booking_comments_path(booking_id: @movie.id) do |f|%>
+                            <div class="field">
+                              <%= text_area_tag :content,nil, class: "form-control" %>
+                            </div>
+                            <br>
+                            <%= submit_tag "Post", class: "btn btn-primary" %>
+                          <% end %>
+
+                          <div class="comment" id="comment-part">
+                            <% @movie.comments.each do |comment| %>
+                              <div class="card card-sm article mb-3">
+                                <div class="card-body">
+                                  <div class="mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                          <i class="fa-regular fa-popcorn"></i>
+                                        </div>
+                                        <div class="col ml-n2">
+                                          <h4 class="card-title mb-1">
+                                              <span><%= comment.user.user_name %></span>
+                                          </h4>
+                                          <p class="card-text small text-muted">
+                                              <%= l(comment.created_at, format: :full) %>
+                                          </p>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="">
+                                    <div class="review-content">
+                                      <%= comment.content %>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <% end %>
+                          </div>
                         </div>
                       </div>
                     </auto-folded>

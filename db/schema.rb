@@ -157,7 +157,6 @@ ActiveRecord::Schema.define(version: 2022_10_05_071102) do
     t.string "password_digest"
     t.boolean "admin"
     t.integer "activated"
-    t.integer "activated_at"
     t.string "activation_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["phone"], name: "index_users_on_phone", unique: true
