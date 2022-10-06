@@ -14,17 +14,15 @@ class User < ApplicationRecord
 
   validates :email, presence: true,
             length: {maximum: Settings.digits.length_email_max_255},
-            format: {with: Settings.regex.email},
-            uniqueness: true
+            format: {with: Settings.regex.email}
 
   validates :password, presence: true,
             length: {minimum: Settings.digits.length_password_min_6},
             allow_nil: true
 
   validates :phone, presence: true,
-          length: {is: Settings.digits.length_phone_number},
-          format: {with: Settings.regex.phone},
-          uniqueness: true
+            length: {is: Settings.digits.length_phone_number},
+            format: {with: Settings.regex.phone}
 
   has_secure_password
 

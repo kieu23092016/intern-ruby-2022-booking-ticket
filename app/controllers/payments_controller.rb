@@ -1,5 +1,6 @@
-class PaymentController < ApplicationController
-  before_action :load_payments_info, only: %i(show index)
+class PaymentsController < ApplicationController
+  before_action :load_payments_info, only: %i(show)
+  before_action :check_tickets_status, only: %i(create)
 
   def index
     @payments = current_user.payments.where(status: :approve)
@@ -13,14 +14,13 @@ class PaymentController < ApplicationController
   end
 
   def create
-    if save_ticket params[:id]
-      @user = current_user
-      @user.create_activation_digest
-      @user.send_noti_booking_email
-      flash[:success] = t "payment_success"
-    else
-      flash[:error] = t "payment_invalid"
-    end
+    @payment = Payment.create(status: :pending,
+                              user_id: current_user.id)
+    save_ticket @payment.id
+    @user = current_user
+    @user.create_activation_digest
+    @user.send_noti_booking_email
+    flash[:success] = t "payment_success"
     redirect_to root_path
   end
 
@@ -32,8 +32,6 @@ class PaymentController < ApplicationController
 
     @room = @show_time.room
     @movie = @show_time.movie
-    @payment = Payment.create(status: :pending,
-                              user_id: current_user.id)
     @tickets = load_payments
   end
 end

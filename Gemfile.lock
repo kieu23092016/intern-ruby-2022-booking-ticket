@@ -94,6 +94,7 @@ GEM
     crass (1.0.6)
     deep_merge (1.2.2)
     diff-lcs (1.5.0)
+    docile (1.4.0)
     dry-configurable (0.15.0)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.6)
@@ -127,6 +128,11 @@ GEM
       dry-schema (~> 1.8, >= 1.8.0)
     erubi (1.11.0)
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     faker (2.1.2)
       i18n (>= 0.8)
     ffi (1.15.5)
@@ -276,6 +282,16 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
+    shoulda-matchers (5.2.0)
+      activesupport (>= 5.2.0)
+    simplecov (0.21.2)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov-rcov (0.3.1)
+      simplecov (>= 0.4.1)
+    simplecov_json_formatter (0.1.4)
     spring (4.0.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
@@ -326,6 +342,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   config
+  factory_bot_rails
   faker (= 2.1.2)
   figaro
   font-awesome-sass (~> 6.2.0)
@@ -346,6 +363,9 @@ DEPENDENCIES
   rubocop-rails (~> 2.14.0)
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
+  shoulda-matchers
+  simplecov
+  simplecov-rcov
   spring
   turbolinks (~> 5)
   tzinfo-data
