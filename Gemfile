@@ -8,6 +8,7 @@ gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.4.1"
 gem "config"
+gem "factory_bot_rails"
 gem "faker", "2.1.2"
 gem "figaro"
 gem "font-awesome-sass", "~> 6.2.0"
@@ -20,6 +21,8 @@ gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.6"
 gem "rails-i18n"
 gem "sass-rails", ">= 6"
+gem "simplecov"
+gem "simplecov-rcov"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
@@ -48,4 +51,5 @@ group :development, :test do
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false
+  gem "shoulda-matchers"
 end
