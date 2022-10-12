@@ -35,7 +35,7 @@ class ShowTime < ApplicationRecord
   def valid_format_showtime
     if start_time.presence
       self.end_time = start_time + movie.duration_min.minutes
-      return if start_time > Time.current
+      return true if start_time > Time.current
     else
       errors.add(:start_time, message: I18n.t("time_ignore"))
       return false
