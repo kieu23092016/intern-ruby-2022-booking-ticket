@@ -22,10 +22,7 @@ User.create!(user_name: user_name,
     date_birth: "1998-02-02",
     sex: 1,
     admin: false,
-    activated: 1,
-    activated_at: Time.zone.now,
-    activation_token: activation_token,
-    activation_digest: User.digest(activation_token))
+    activated: 1)
     start = start+1
 end
 
