@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user&.authenticate(params[:session][:password])
-      log_in @user
+      sign_in @user
       if @user.admin
         redirect_to admin_root_url
       else
