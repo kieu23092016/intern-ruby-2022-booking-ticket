@@ -17,6 +17,7 @@ gem "jbuilder", "~> 2.7"
 gem "mini_magick", "4.9.5"
 gem "mysql2", "~> 0.5"
 gem "pagy"
+gem "pry-rails"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.6"
 gem "rails-i18n"
@@ -32,7 +33,6 @@ end
 
 group :development do
   gem "listen", "~> 3.3"
-  gem "pry-rails"
   gem "rack-mini-profiler", "~> 2.0"
   gem "spring"
   gem "web-console", ">= 4.1.0"
@@ -48,6 +48,7 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem "ffaker"
+  gem "rails-controller-testing"
   gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
