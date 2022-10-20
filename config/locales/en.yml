@@ -31,6 +31,7 @@ en:
       event: Event
       cine_price: Cinema/ Price
       support: Support
+      profile: Profile
     footer:
       about_us: About us
       terms_of_use: Terms of use

@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   attr_accessor :remember_token, :activation_token
 
   before_save :downcase_email
@@ -23,8 +25,6 @@ class User < ApplicationRecord
   validates :phone, presence: true,
             length: {is: Settings.digits.length_phone_number},
             format: {with: Settings.regex.phone}
-
-  has_secure_password
 
   scope :sort_list, ->{order :user_name}
 

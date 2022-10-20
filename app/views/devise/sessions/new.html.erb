@@ -29,7 +29,7 @@
                                     </div>
                                   </div>
                                   <div class="login-form">
-                                    <%= form_for(:session, url: login_path) do |f| %>
+                                  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                                       <%= f.label :email %>
                                       <%= f.email_field :email, class: "login" %>
                                       <%= f.label :password %>
