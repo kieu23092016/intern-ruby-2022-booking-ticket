@@ -1,0 +1,40 @@
+<div class="block-wrapper">
+  <div class = "container">
+    <div class = "row">
+      <div class="content-wrapper">
+        <div class="tab-movies tab-crm">
+          <div class="tab-movies-line">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab_info" data-toggle="tab"><%= t(".change_password") %></a></li>
+            </ul>
+            <div class="tab-content">
+              <div id="tab_info" class="tab-pane active">
+                <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+                  <%= render "devise/shared/error_messages", resource: resource %>
+                  <%= f.hidden_field :reset_password_token %>
+                  <div class="row">
+                    <div class="col-md-5 col-sm-7 col-xs-7">
+                      <%= f.label :password, "New password" %><br />
+                      <% if @minimum_password_length %>
+                        <em>(<%= @minimum_password_length %> <%= t (".characters_minimum") %></em><br />
+                      <% end %>
+                      <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "login pass" %>
+                    </div>
+                  </div>
+                  <div class = "row">
+                    <div class="col-md-5 col-sm-7 col-xs-7">
+                      <%= f.label :password_confirmation, t(".confirm_new_password") %><br />
+                      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "login pass" %>
+                    </div>
+                    <div class="col-md-12"><%= f.submit t(".change_my_password"), id: "save", class: "btn primary btn-login-buyticket" %></div>
+                  </div>
+                <% end %>
+                <%= render "devise/shared/links" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
