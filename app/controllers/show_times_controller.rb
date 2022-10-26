@@ -1,7 +1,6 @@
-class ShowtimesController < ApplicationController
-  before_action :authenticate_user!
+class ShowTimesController < ApplicationController
+  load_and_authorize_resource
   before_action :load_show_time_info
-
   def show
     destroy_instances_seats
   end

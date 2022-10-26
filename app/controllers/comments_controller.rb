@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: %i(create)
+  load_and_authorize_resource
   def create
     @comment = Comment.create(movie_id: params[:booking_id],
                               user_id: current_user.id,

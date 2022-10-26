@@ -32,7 +32,7 @@
                       <% end %>
                       <div class="dropdown-menu">
                         <%= link_to t(".account"), payments_path, class: "dropdown-item" %>
-                        <% if current_user.admin? %>
+                        <% if can? :manage, :all %>
                           <%= link_to "Admin", admin_root_path, class: "dropdown-item" %>
                         <% end %>
                         <%= link_to t(".profile"), edit_user_registration_path, class: "dropdown-item" %>

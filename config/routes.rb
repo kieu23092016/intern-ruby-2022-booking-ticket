@@ -26,11 +26,11 @@ Rails.application.routes.draw do
       resources :users
       get "/add_movie", to: "movies#new"
     end
-    
-    resources :showtimes do
+
+    resources :show_times do
       member do
-        post "/", to: "showtimes#create"
-        delete "/", to: "showtimes#destroy"
+        post "/", to: "show_times#create"
+        delete "/", to: "show_times#destroy"
       end
     end
     

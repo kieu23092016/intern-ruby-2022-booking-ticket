@@ -18,7 +18,6 @@ class PaymentsController < ApplicationController
                               user_id: current_user.id)
     save_ticket @payment.id
     @user = current_user
-    @user.create_activation_digest
     @user.send_noti_booking_email
     flash[:success] = t "payment_success"
     redirect_to root_path
