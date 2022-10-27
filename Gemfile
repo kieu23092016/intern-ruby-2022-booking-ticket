@@ -47,6 +47,7 @@ end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
+  gem "devise", "~> 4.1"
   gem "ffaker"
   gem "rails-controller-testing"
   gem "rspec-rails", "~> 4.0.1"

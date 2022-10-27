@@ -24,24 +24,25 @@
 
             <div class="secondary-nav-wrapper">
               <ul class="secondary-nav">
-                <% if logged_in? %>
+                <% if user_signed_in? %>
                   <li>
                     <div class="dropdown">
                       <%= link_to("#", class: "dropdown-toggle", data:{toggle: "dropdown"}) do %>
-                        <i class="fa-duotone fa-user"></i><span><%= @current_user.user_name %></span>
+                        <i class="fa-duotone fa-user"></i><span><%= current_user.user_name %></span>
                       <% end %>
                       <div class="dropdown-menu">
                         <%= link_to t(".account"), payments_path, class: "dropdown-item" %>
                         <% if current_user.admin? %>
                           <%= link_to "Admin", admin_root_path, class: "dropdown-item" %>
                         <% end %>
-                        <%= link_to t(".exit"), logout_path, method: :delete, class: "dropdown-item" %>
+                        <%= link_to t(".profile"), edit_user_registration_path, class: "dropdown-item" %>
+                        <%= link_to t(".exit"), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                       </div>
                     </div>
                   </li>
                 <% else %>
                   <li>
-                    <%= link_to(login_path, id: "loginLink" ) do %>
+                    <%= link_to(new_user_session_path, id: "loginLink" ) do %>
                       <i class="fa-solid fa-user"></i> <%= t(".login") %>
                     <% end %>
                   </li>

@@ -14,7 +14,7 @@ RSpec.describe Admin::MoviesController, type: :controller do
   end
   let(:user){FactoryBot.create :user}
   before do 
-    log_in user
+    sign_in user
   end
   describe "GET#index" do
     it "should show the list of movies" do

@@ -1,5 +1,5 @@
 class ShowtimesController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :load_show_time_info
 
   def show
