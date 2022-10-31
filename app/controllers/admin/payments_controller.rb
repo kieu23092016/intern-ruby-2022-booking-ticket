@@ -1,8 +1,11 @@
 class Admin::PaymentsController < AdminController
+  skip_before_action :search_movies
   before_action :find_payment, only: %i(show)
 
   def index
-    @pagy, @payments = pagy Payment.sort_list,
+    @q = Payment.ransack(params[:search])
+    @payments = @q.result(distinct: true)
+    @pagy, @payments = pagy @payments.sort_list,
                             items: Settings.digits.admin_movie_per_page
   end
 

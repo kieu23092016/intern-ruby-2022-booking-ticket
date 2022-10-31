@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   include SessionsHelper
-
+  before_action :search_movies
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -24,11 +24,8 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
-  def logged_in_user
-    return if user_signed_in?
-
-    store_location
-    flash[:error] = t("text.login_required")
-    redirect_to login_url
+  def search_movies
+    @q = Movie.ransack(params[:search])
+    @movies = @q.result
   end
 end

@@ -51,7 +51,9 @@
                 </div>
                 <div class="detail-info-row">
                   <label><%= t ".category" %>:&nbsp;</label>
-                  <span class="detail-info-right"><%= @categories.join(", ") %></span>
+                  <span class="detail-info-right">
+                    <%= @categories.join(", ") %>
+                  </span>
                 </div>
                 <div class="detail-info-row">
                   <label><%= t ".release_time" %>:&nbsp;</label>
@@ -73,8 +75,12 @@
                           <p><%= @movie.description %></p>
                         </div>
                         <div class="col-md-4 calendar" style="float: none; margin-bottom: 10px; padding: 0">
-                         <%= form_tag date_bookings_path, {class: "btn btn-select login location datepicker"} do %>
-                            <%= date_field_tag :datetime_ida, Date.today, class: "btn-select-input date"%>
+                          <%= form_tag(search_showtime_index_path, class: "btn btn-select login location datepicker", method: :get, remote: true) do |f| %>
+                            <div class="input-daterange">
+                              <%= hidden_field_tag :movie_id, @movie.id %>
+                              <%= date_field_tag :start_time, nil, class: "search-box" %>
+                              <%= submit_tag t(".save"),class: "btn btn-info" %>
+                            </div>
                           <% end %>
                         </div>
                         <div class="detail-group-cinema">

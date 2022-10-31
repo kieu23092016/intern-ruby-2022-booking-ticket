@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     devise_for :users
-    post "/search", to: "static_pages#search"
+    get "/search", to: "static_pages#search"
     root "static_pages#home"
     
     resources :bookings, only: [:create, :destroy] do 
@@ -9,9 +9,7 @@ Rails.application.routes.draw do
         post "/", to: "comments#create"
       end
     end
-    resource :bookings do 
-      post "/date", to: "bookings#date_filter"
-    end
+    resources :search_showtime
     resources :bookings 
     resources :account_activations, only: [:edit]
 

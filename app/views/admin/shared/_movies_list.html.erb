@@ -1,4 +1,14 @@
-<%= link_to t(".add"), admin_add_movie_path, method: :get, class: "btn btn-primary btn-lg active" %>
+<div>
+<%= link_to t(".add"), admin_add_movie_path, method: :get, class: "btn btn-primary  active" %>
+</div>
+<%= search_form_for(@q, url: admin_movies_path, class: "search-form") do |f| %>
+  <div class="input-append">
+    <%= f.search_field :movie_attrs_cont, placeholder: t(".find_box"), class: "search-box" %>
+    <%= f.date_field :show_times_start_time_eq, class: "search-box" %>
+    <%= f.submit class:"btn btn-info" %>
+  </div>
+<% end %>
+<%= sort_link(@q, :updated_at,default_order: :asc) %>
 <br><br>
 <table class="table table-striped">
   <tr>

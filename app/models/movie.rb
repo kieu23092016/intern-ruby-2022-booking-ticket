@@ -11,7 +11,7 @@ class Movie < ApplicationRecord
   accepts_nested_attributes_for :movie_categories
 
   has_one_attached :image
-
+  ransack_alias :movie_attrs, :title_or_cast_or_director
   validates :title, presence: true
   validates :release_time, presence: true
   validates :image, content_type: {in: Settings.image.format,
@@ -20,11 +20,6 @@ class Movie < ApplicationRecord
                            message: I18n.t("valid_img_volume")}
 
   scope :sort_list, ->{order :release_time}
-
-  scope :search, lambda {|search_param|
-                   where("title LIKE? OR cast LIKE?",
-                         "%#{search_param}%", "%#{search_param}%")
-                 }
 
   def display_image
     image.variant resize_to_limit: Settings.digits.resize_limit

@@ -25,6 +25,13 @@ class ShowTime < ApplicationRecord
                               date.to_datetime.beginning_of_day,
                               date.to_datetime.end_of_day
                       }
+  ransacker :start_time, type: :date do
+    Arel.sql("date(start_time)")
+  end
+
+  def self.ransackable_scopes _auth_object = nil
+    %i(filter_date)
+  end
 
   def valid_overlap_showtime
     return if ShowTime.find_room(room_id).overlap(start_time, end_time).blank?

@@ -1,6 +1,6 @@
 class Admin::MoviesController < AdminController
   before_action :find_movie, except: %i(index new create)
-  before_action :list_categories, only: :show
+  before_action :list_categories, only: %i(show)
 
   rescue_from ActiveRecord::DeleteRestrictionError, with: :error_del_method
   def error_del_method
@@ -9,7 +9,9 @@ class Admin::MoviesController < AdminController
   end
 
   def index
-    @pagy, @movies = pagy Movie.sort_list,
+    @q = Movie.includes(:show_times).ransack(params[:search])
+    @movies = @q.result(distinct: true)
+    @pagy, @movies = pagy @movies,
                           items: Settings.digits.admin_movie_per_page
   end
 

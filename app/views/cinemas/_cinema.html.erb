@@ -7,7 +7,9 @@
       <div class="item-cinema">
         <label><%= t("text.sub") %></label>
         <div class="showtime-block">
-          <%= render partial: "bookings/show_time_for_cinema", locals: {show_times: show_times, cinema: cinema} %>
+            <% unless show_times.nil? %>
+              <%= render partial: "bookings/show_time_for_cinema", locals: {show_times: show_times, cinema: cinema} %>
+            <% end %>
         </div>
       </div>
     </div>
