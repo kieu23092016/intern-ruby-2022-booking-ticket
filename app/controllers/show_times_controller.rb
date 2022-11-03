@@ -6,15 +6,15 @@ class ShowTimesController < ApplicationController
   end
 
   def create
-    Seat.transaction do
+    Payment.transaction do
+      @payment = Payment.create(status: :pending,
+                                user_id: current_user.id)
       @seat = Seat.create(seat_number: params[:seat_number],
                           show_time_id: @show_time.id,
                           status: :choosen,
                           seat_type: :standard)
-      Ticket.transaction do
-        @ticket = Ticket.create(price: Settings.price.standard,
-                                seat_id: @seat.id)
-      end
+      @ticket = Ticket.create(price: Settings.price.standard,
+                              seat_id: @seat.id, payment_id: @payment.id)
     end
     add_session_tickets @ticket.id
     respond_to do |format|

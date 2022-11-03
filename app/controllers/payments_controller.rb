@@ -7,16 +7,14 @@ class PaymentsController < ApplicationController
   end
 
   def show
-    return if @tickets
+    return if @tickets.present?
 
     flash[:error] = t "payment_invalid"
     redirect_to root_path
   end
 
   def create
-    @payment = Payment.create(status: :pending,
-                              user_id: current_user.id)
-    save_ticket @payment.id
+    save_ticket
     @user = current_user
     @user.send_noti_booking_email
     flash[:success] = t "payment_success"
