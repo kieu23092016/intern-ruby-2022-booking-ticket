@@ -4,9 +4,13 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
-  protect_from_forgery with: :exception
 
-  protected
+  rescue_from CanCan::AccessDenied do |_exception|
+    flash[:alert] = t "access_denied"
+    redirect_to root_path
+  end
+
+  protect_from_forgery with: :exception
 
   def configure_permitted_parameters
     added_attrs = [:user_name, :email, :password, :password_confirmation,
@@ -21,7 +25,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in_user
-    return if logged_in?
+    return if user_signed_in?
 
     store_location
     flash[:error] = t("text.login_required")

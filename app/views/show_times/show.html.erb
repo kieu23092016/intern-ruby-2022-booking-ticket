@@ -26,7 +26,7 @@
                                       <li class = "cinema-selected"><%= index %></li>
                                     <% else %>
                                       <li class = "available">
-                                        <%= link_to index, showtime_path(seat_number: (Settings.seat_code.seat_letter[i] + index.to_s)), remote: true, method: :post, id: "#{Settings.seat_code.seat_letter[i] + index.to_s}" %>
+                                        <%= link_to index, show_time_path(seat_number: (Settings.seat_code.seat_letter[i] + index.to_s)), remote: true, method: :post, id: "#{Settings.seat_code.seat_letter[i] + index.to_s}" %>
                                       </li>
                                     <% end %>
                                     <% index += 1 %>
