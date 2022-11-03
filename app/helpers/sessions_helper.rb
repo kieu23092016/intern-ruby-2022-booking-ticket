@@ -35,7 +35,7 @@ module SessionsHelper
 
     session[:tickets_id].each do |ticket_id|
       ticket = Ticket.find_by(id: ticket_id)
-      tickets << ticket
+      tickets << ticket if ticket
     end
     tickets
   end
@@ -43,35 +43,31 @@ module SessionsHelper
   def check_tickets_status
     session[:tickets_id].each do |ticket_id|
       ticket = Ticket.find_by(id: ticket_id)
-      show_time_id = ticket.show_time.id
-      seat_number = ticket.seat_number
-      show_time = ShowTime.find_by(id: show_time_id)
-      next unless show_time.seats.find_by(seat_number: seat_number,
-                                          status: "unavailable")
+      next if ticket
 
       flash[:error] = t "payment_invalid"
       redirect_to root_path
     end
   end
 
-  def save_payment id
+  def save_payment
     Payment.transaction do
       total_cost = session[:tickets_id].length * Settings.price.standard
-      payment = Payment.find_by(id: id)
-      payment.update(status: :approve,
-                     total_cost: total_cost)
+      ticket_id = session[:tickets_id].first
+      payment_id = Ticket.find_by(id: ticket_id).payment_id
+      payment = Payment.find_by(id: payment_id)
+      payment.update!(status: :approve,
+                      total_cost: total_cost)
     end
   end
 
-  def save_ticket id
-    save_payment id
+  def save_ticket
+    save_payment
     return false if session[:tickets_id].blank?
 
     ticket_transaction = Ticket.transaction do
       session[:tickets_id].each do |ticket_id|
         ticket = Ticket.find_by(id: ticket_id)
-        next unless ticket.update(payment_id: id)
-
         ticket.seat.unavailable!
       end
       true

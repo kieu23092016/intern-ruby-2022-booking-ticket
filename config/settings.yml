@@ -30,3 +30,5 @@ payment_status:
   decline: 3
 image:
   format: ["image/jpeg", "image/jpg", "image/png"]
+payment:
+  expired: 1
