@@ -1,4 +1,4 @@
 $("#<%= @seat.seat_number %>").parent().css("background-color", "#dfdfdf")
 $(".select-seat").html("<%= load_seats %>")
-$("#<%= @seat.seat_number %>").attr("href", "<%= showtime_path(seat_number: @seat.seat_number) %>")
+$("#<%= @seat.seat_number %>").attr("href", "<%= show_time_path(seat_number: @seat.seat_number) %>")
 $("#<%= @seat.seat_number %>").attr("data-method", "post")

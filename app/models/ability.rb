@@ -6,6 +6,8 @@ class Ability
     return if user.blank?
 
     can %i(read create), Payment
+    can :destroy, ShowTime
+
     can %i(read create), ShowTime
     can :create, Comment
     can :search, Movie

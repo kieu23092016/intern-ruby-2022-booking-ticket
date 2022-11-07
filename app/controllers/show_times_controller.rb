@@ -30,7 +30,9 @@ class ShowTimesController < ApplicationController
       format.js
     end
     delete_session_ticket @seat.ticket.id
+    @payment = @seat.ticket.payment
     @seat.destroy
+    @payment.destroy
   end
 
   private

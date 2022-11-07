@@ -16,7 +16,7 @@ class PaymentsController < ApplicationController
   def create
     save_ticket
     @user = current_user
-    @user.send_noti_booking_email
+    SendUsersPaymentJob.perform_in(10.minutes, @user.id)
     flash[:success] = t "payment_success"
     redirect_to root_path
   end

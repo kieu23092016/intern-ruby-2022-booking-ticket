@@ -1,4 +1,6 @@
+require "sidekiq/web"
 Rails.application.routes.draw do
+  mount Sidekiq::Web => "/sidekiq"
   scope "(:locale)", locale: /en|vi/ do
     devise_for :users
     get "/search", to: "static_pages#search"

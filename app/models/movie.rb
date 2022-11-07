@@ -19,7 +19,7 @@ class Movie < ApplicationRecord
                     size: {less_than: Settings.digits.volume_img_max.megabytes,
                            message: I18n.t("valid_img_volume")}
 
-  scope :sort_list, ->{order :release_time}
+  scope :sort_list, ->{order(updated_at: :desc)}
 
   def display_image
     image.variant resize_to_limit: Settings.digits.resize_limit
