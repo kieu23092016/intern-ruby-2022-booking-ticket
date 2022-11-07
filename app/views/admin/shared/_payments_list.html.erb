@@ -1,4 +1,12 @@
 <h1><%= t ".manage" %></h1>
+<%= search_form_for(@q, url: admin_payments_path, class: "search-form") do |f| %>
+  <div class="input-append">
+    <%= t(".price_gt") %>
+    <%= f.search_field :total_cost_gteq, class: "search-box" %> - 
+    <%= f.search_field :total_cost_lteq, class: "search-box" %>
+    <%= f.submit class:"btn btn-info" %>
+  </div>
+<% end %>
 <br>
 <table class="table table-striped">
   <tr>
@@ -6,6 +14,7 @@
     <th><%= t ".customer" %></th>
     <th><%= t ".created_at" %></th>
     <th><%= t ".status" %></th>
+    <th><%= t ".amount" %></th>
     <th><%= t ".details" %></th>
   </tr>
 

@@ -94,6 +94,7 @@ vi:
       release_time: Thời gian phát hành
       main_content: Nội dung chính
       comment: Bình luận phim
+      save: Save
   time:
     formats:
       default: "%d/%m/%Y"
@@ -187,6 +188,7 @@ vi:
         category: Thể loại
         show_times: Lịch chiếu
         add: + Thêm phim
+        find_box: Tìm tên phim, diễn viên,...
       showtimes_form:
         add: Thêm lịch chiếu cho phim
         start_time: Thời gian bắt đầu
@@ -218,6 +220,7 @@ vi:
         created_at: Thời gian tạo đơn
         status: Tình trạng đơn
         details: Chi tiết vé đặt
+        price_gt: Giá tiền trong khoảng từ 
       users_list:
         manage: Quản lý người dùng
         id: Số thứ tự

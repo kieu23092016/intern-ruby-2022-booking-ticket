@@ -5,7 +5,6 @@ class StaticPagesController < ApplicationController
   end
 
   def search
-    @search = params[:search]
-    @movies = Movie.search(@search)
+    @search = params[:search][:movie_attrs_cont]
   end
 end

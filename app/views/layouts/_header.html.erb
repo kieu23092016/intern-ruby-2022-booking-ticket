@@ -12,12 +12,10 @@
             <div class="search">
               <form class="search-form">
               </form>
-              <%= form_tag search_path, {class: "search-form"} do %>
+              <%= search_form_for(@q, url: search_path, class: "search-form") do |f| %>
                 <div class="input-append">
-                  <%= text_field_tag :search, nil, placeholder: t(".find_box"), class: "search-box" %>
-                  <%= button_tag(type: "submit", class: "search-btn") do %>
-                    <%= content_tag(:i,nil, class: "fa fa-thin fa-magnifying-glass")%>
-                  <% end %>
+                  <%= f.search_field :movie_attrs_cont, placeholder: t(".find_box"), class: "search-box" %>
+                  <%= f.submit class:"btn" %>
                 </div>
               <% end %>
             </div>

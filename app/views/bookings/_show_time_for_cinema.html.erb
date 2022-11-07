@@ -1,3 +1,3 @@
 <% show_times.each do |rooms_id, showtime_list| %>
-<%= cinema.rooms.ids.include?(rooms_id) ? render(partial: "showtimes/show_time", collection: showtime_list, as: :show_time) : "" %>
+  <%= cinema.rooms.ids.include?(rooms_id) ? render(partial: "show_times/show_time", collection: showtime_list, as: :show_time) : "" %>
 <% end %>
