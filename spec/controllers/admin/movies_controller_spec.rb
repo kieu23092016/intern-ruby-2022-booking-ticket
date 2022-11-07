@@ -1,6 +1,7 @@
 require "rails_helper"
 include SessionsHelper
 RSpec.describe Admin::MoviesController, type: :controller do
+  # test ci
   let(:category1){FactoryBot.create :category}
   let(:category2){FactoryBot.create :category}
   let(:movie1){FactoryBot.create :movie}
