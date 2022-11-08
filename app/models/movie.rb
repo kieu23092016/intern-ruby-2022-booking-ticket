@@ -8,7 +8,7 @@ class Movie < ApplicationRecord
   has_many :movie_categories, dependent: :destroy
   has_many :categories, through: :movie_categories
 
-  accepts_nested_attributes_for :movie_categories
+  accepts_nested_attributes_for :categories, allow_destroy: true
 
   has_one_attached :image
   ransack_alias :movie_attrs, :title_or_cast_or_director

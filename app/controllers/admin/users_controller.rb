@@ -14,8 +14,7 @@ class Admin::UsersController < AdminController
       flash[:error] = t "not_change_admin"
       redirect_to admin_users_path
     else
-      @user.activated == "Activated" ? @user.inactivate : @user.activate
-
+      @user.Activated? ? @user.Inactivated! : @user.Activated!
       respond_to do |format|
         format.js
       end

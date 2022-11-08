@@ -57,11 +57,11 @@ class User < ApplicationRecord
   end
 
   def activate
-    update_columns(activated: 1, activated_at: Time.zone.now)
+    update_columns(activated: 1)
   end
 
   def inactivate
-    update_columns(activated: 0, activated_at: nil)
+    update_columns(activated: 0)
   end
 
   def send_noti_booking_email
