@@ -5,4 +5,8 @@ class Payment < ApplicationRecord
 
   scope :sort_list, ->{order created_at: :desc}
   delegate :user_name, to: :user
+
+  def payment_expired?
+    created_at < Settings.payment.expired.minutes.ago
+  end
 end
