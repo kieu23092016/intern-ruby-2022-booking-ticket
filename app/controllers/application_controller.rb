@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::API
   include Pagy::Backend
   include SessionsHelper
   before_action :search_movies
@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception
 
   def configure_permitted_parameters
     added_attrs = [:user_name, :email, :password, :password_confirmation,

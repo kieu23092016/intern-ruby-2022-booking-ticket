@@ -38,4 +38,11 @@ Rails.application.routes.draw do
       end
     end
   end
+  constraints subdomain: 'api' do
+    scope module: 'api' do
+        namespace :v1 do
+            resources :bookings
+        end
+    end
+  end
 end

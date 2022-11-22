@@ -7,7 +7,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @cinemas = Cinema.all
+    # @cinemas = Cinema.all
+    # render json: Cinema.all
   end
 
   private
