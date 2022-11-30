@@ -13,17 +13,7 @@ Rails.application.routes.draw do
     resources :bookings 
     resources :account_activations, only: [:edit]
 
-    namespace :admin do
-      root "static_pages#home"
-
-      resources :movies do
-        resources :show_times
-      end
-
-      resources :payments
-      resources :users
-      get "/add_movie", to: "movies#new"
-    end
+    
 
     resources :show_times do
       member do
@@ -40,9 +30,21 @@ Rails.application.routes.draw do
   end
   constraints subdomain: 'api' do
     scope module: 'api' do
-        namespace :v1 do
-            resources :bookings
+      # namespace :v1 do
+      resources :bookings, only: [:new, :show] 
+      # end
+      post "/auth/login", to: "authentication#sign_up"
+      namespace :admin do
+        root "static_pages#home"
+  
+        resources :movies do
+          resources :show_times
         end
+  
+        resources :payments
+        resources :users
+        get "/add_movie", to: "movies#new"
+      end
     end
   end
 end

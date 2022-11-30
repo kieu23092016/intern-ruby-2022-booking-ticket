@@ -3,10 +3,12 @@ class Admin::PaymentsController < AdminController
   before_action :find_payment, only: %i(show)
 
   def index
-    @q = Payment.ransack(params[:search])
-    @payments = @q.result(distinct: true)
-    @pagy, @payments = pagy @payments.sort_list,
-                            items: Settings.digits.admin_movie_per_page
+    # binding.pry 
+    # @q = Payment.ransack(params[:search])
+    # @payments = @q.result(distinct: true)
+    # @pagy, @payments = pagy @payments.sort_list,
+    #                         items: Settings.digits.admin_movie_per_page
+    render json:@payments
   end
 
   def show

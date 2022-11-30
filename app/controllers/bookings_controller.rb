@@ -7,8 +7,10 @@ class BookingsController < ApplicationController
   end
 
   def show
-    # @cinemas = Cinema.all
-    # render json: Cinema.all
+    render json: {
+      movie: @movie, 
+      cinemas: Cinema.all
+    }
   end
 
   private
@@ -17,8 +19,7 @@ class BookingsController < ApplicationController
     @movie = Movie.find_by id: params[:id]
     return if @movie
 
-    flash[:error] = t "film_not_found"
-    redirect_to root_path
+    render json: {}, status: :not_found
   end
 
   def list_categories
